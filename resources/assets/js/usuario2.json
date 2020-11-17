@@ -1,0 +1,18 @@
+{
+	"1" : {
+		"nombre" : "Wes",
+		"apellido" : "Gibbins",
+		"usuario" : "gwes",
+        "DNI" : "87469532",
+        "Perfil" : "Asistente",
+		"Sexo" : "Masculino"
+	},
+	"2" : {
+		"nombre" : "Annalise",
+		"apellido" : "Keating",
+		"usuario" : "kannalise",
+        "DNI" : "74512398",
+        "Perfil" : "Jefe",
+		"Sexo" : "Femenino"
+	}
+}

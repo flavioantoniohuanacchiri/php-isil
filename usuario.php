@@ -16,7 +16,9 @@
 		<div class="container">
 			<?php 
 				//echo file_get_contents(__DIR__."/resources/assets/js/usuario.json"); exit;
-				$usuariosData = json_decode(file_get_contents(__DIR__."/resources/assets/js/usuario.json"), true);
+				//$usuariosData = json_decode(file_get_contents(__DIR__."/resources/assets/js/usuario.json"), true);
+				$usuarioJson = file_get_contents(__DIR__."/resources/assets/js/usuario.json");
+				$usuariosData = json_decode($usuarioJson,true);
 			?>
 			<div class="box box-primary content-table">
 				<h1>Listado de Usuarios</h1>

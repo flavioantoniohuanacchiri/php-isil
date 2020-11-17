@@ -1,0 +1,92 @@
+{
+    "1": {
+        "usuario": "Piquichon",
+        "nombres": "Carlos Augusto",
+        "ape_paterno": "Blondet",
+        "ape_materno": "Ríos",
+        "DNI": "12346789",
+        "Perfil": "Misio",
+        "sexo": "Masculino"
+    },
+    "2": {
+        "usuario": "Piquichon",
+        "nombres": "Julio Alberto Móises",
+        "ape_paterno": "Calderón",
+        "ape_materno": "Gonzales",
+        "DNI": "12346789",
+        "Perfil": "Misio",
+        "sexo": "Masculino"
+    },
+    "3": {
+        "usuario": "Piquichon",
+        "nombres": "Giancarlo Vitto",
+        "ape_paterno": "Díaz",
+        "ape_materno": "Vasquez",
+        "DNI": "12346789",
+        "Perfil": "Misio",
+        "sexo": "Masculino"
+    },
+    "4": {
+        "usuario": "Piquichon",
+        "nombres": "Edson Alberto",
+        "ape_paterno": "Forno",
+        "ape_materno": "Quiñones",
+        "DNI": "12346789",
+        "Perfil": "Misio",
+        "sexo": "Masculino"
+    },
+    "5": {
+        "usuario": "Piquichon",
+        "nombres": "Katia Elizabeth",
+        "ape_paterno": "Garvich",
+        "ape_materno": "San Martín",
+        "DNI": "12346789",
+        "Perfil": "Misio",
+        "sexo": "Femenino"
+    },
+    "6": {
+        "usuario": "Piquichon",
+        "nombres": "Joseph Jesús",
+        "ape_paterno": "Jimenez",
+        "ape_materno": "Sanchez",
+        "DNI": "12346789",
+        "Perfil": "Misio",
+        "sexo": "Masculino"
+    },
+    "7": {
+        "usuario": "Piquichon",
+        "nombres": "Luis Alfredo",
+        "ape_paterno": "Pardón",
+        "ape_materno": "La Rosa",
+        "DNI": "12346789",
+        "Perfil": "Misio",
+        "sexo": "Masculino"
+    },
+    "8": {
+        "usuario": "Piquichon",
+        "nombres": "Lucía Andrea",
+        "ape_paterno": "Quinto",
+        "ape_materno": "Ascurra",
+        "DNI": "12346789",
+        "Perfil": "Misio",
+        "sexo": "Femenino"
+    },
+    "9": {
+        "usuario": "Piquichon",
+        "nombres": "Fernando Jacobo",
+        "ape_paterno": "Quiroz",
+        "ape_materno": "Cabanillas",
+        "DNI": "12346789",
+        "Perfil": "Misio",
+        "sexo": "Masculino"
+    },
+    "10": {
+        "usuario": "Piquichon",
+        "nombres": "Edu José",
+        "ape_paterno": "Villegas",
+        "DNI": "12346789",
+        "Perfil": "Misio",
+        "ape_materno": "Zea",
+        "sexo": "Masculino"
+    }
+}

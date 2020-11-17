@@ -1,0 +1,92 @@
+{
+	"1" : {
+		"nombres" : "Carlos Augusto",
+		"ape_paterno" : "Blondet",
+		"ape_materno" : "Ríos",
+		"usuario" : "cblondet",
+		"DNI" : "99998888",
+		"perfil" : "Editor",
+		"sexo" : "Masculino"
+	},
+	"2" : {
+		"nombres" : "Julio Alberto Móises",
+		"ape_paterno" : "Calderón",
+		"ape_materno" : "Gonzales",
+		"usuario" : "jcalderon",
+		"DNI" : "56787654",
+		"perfil" : "Lector",
+		"sexo" : "Masculino"
+	},
+	"3" : {
+		"nombres" : "Giancarlo Vitto",
+		"ape_paterno" : "Díaz",
+		"ape_materno" : "Vasquez",
+		"usuario" : "gdiaz",
+		"DNI" : "34566677",
+		"perfil" : "Lector",
+		"sexo" : "Masculino"
+	},
+	"4" : {
+		"nombres" : "Edson Alberto",
+		"ape_paterno" : "Forno",
+		"ape_materno" : "Quiñones",
+		"usuario" : "eforno",
+		"DNI" : "09643455",
+		"perfil" : "Admin",
+		"sexo" : "Masculino"
+	},
+	"5" : {
+		"nombres" : "Katia Elizabeth",
+		"ape_paterno" : "Garvich",
+		"ape_materno" : "San Martín",
+		"usuario" : "kgarvich",
+		"DNI" : "73645268",
+		"perfil" : "Lector",
+		"sexo" : "Femenino"
+	},
+	"6" : {
+		"nombres" : "Joseph Jesús",
+		"ape_paterno" : "Jimenez",
+		"ape_materno" : "Sanchez",
+		"usuario" : "jjimenez",
+		"DNI" : "87654321",
+		"perfil" : "Lector",
+		"sexo" : "Masculino"
+	},
+	"7" : {
+		"nombres" : "Luis Alfredo",
+		"ape_paterno" : "Pardón",
+		"ape_materno" : "La Rosa",
+		"usuario" : "lpardon",
+		"DNI" : "00998877",
+		"perfil" : "Editor",
+		"sexo" : "Masculino"
+	},
+	"8" : {
+		"nombres" : "Lucía Andrea",
+		"ape_paterno" : "Quinto",
+		"ape_materno" : "Ascurra",
+		"usuario" : "lquinto",
+		"DNI" : "33445566",
+		"perfil" : "Lector",
+		"sexo" : "Femenino"
+	},
+	"9" : {
+		"nombres" : "Fernando Jacobo",
+		"ape_paterno" : "Quiroz",
+		"ape_materno" : "Cabanillas",
+		"usuario" : "fquiroz",
+		"DNI" : "34561234",
+		"perfil" : "Editor",
+		"sexo" : "Masculino"
+	},
+	"10" : {
+		"nombres" : "Edu José",
+		"ape_paterno" : "Villegas",
+		"ape_materno" : "Zea",
+		"usuario" : "evillegas",
+		"DNI" : "23876511",
+		"perfil" : "Admin",
+		"sexo" : "Masculino"
+	}
+}

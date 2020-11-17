@@ -1,0 +1,72 @@
+{
+	"1" : {
+		"nombres_apellidos" : "Carlos Augusto Blondet Ríos",
+		"usuario" : "cblondet",
+		"dni" : "12345678",
+		"perfil" : "admin",
+		"sexo" : "Masculino"
+	},
+	"2" : {
+		"nombres_apellidos" : "Julio Alberto Móises Calderón Gonzales",
+		"usuario" : "jcalderon",
+		"dni" : "12345678",
+		"perfil" : "user",
+		"sexo" : "Masculino"
+	},
+	"3" : {
+		"nombres_apellidos" : "Giancarlo Vitto Díaz Vasquez",
+		"usuario" : "gdiaz",
+		"dni" : "12345678",
+		"perfil" : "user",
+		"sexo" : "Masculino"
+	},
+	"4" : {
+		"nombres_apellidos" : "Edson Alberto Forno Quiñones",
+		"usuario" : "eforno",
+		"dni" : "12345678",
+		"perfil" : "admin",
+		"sexo" : "Masculino"
+	},
+	"5" : {
+		"nombres_apellidos" : "Katia Elizabeth Garvich San Martín",
+		"usuario" : "kgarvich",
+		"dni" : "12345678",
+		"perfil" : "admin",
+		"sexo" : "Femenino"
+	},
+	"6" : {
+		"nombres_apellidos" : "Joseph Jesús Jimenez Sanchez",
+		"usuario" : "jjimenez",
+		"dni" : "12345678",
+		"perfil" : "user",
+		"sexo" : "Masculino"
+	},
+	"7" : {
+		"nombres_apellidos" : "Luis Alfredo Pardón La Rosa",
+		"usuario" : "apardon",
+		"dni" : "12345678",
+		"perfil" : "admin",
+		"sexo" : "Masculino"
+	},
+	"8" : {
+		"nombres_apellidos" : "Lucía Andrea Quinto Ascurra",
+		"usuario" : "lquinto",
+		"dni" : "12345678",
+		"perfil" : "user",
+		"sexo" : "Femenino"
+	},
+	"9" : {
+		"nombres_apellidos" : "Fernando Jacobo Quiroz Cabanillas",
+		"usuario" : "fquiroz",
+		"dni" : "12345678",
+		"perfil" : "admin",
+		"sexo" : "Masculino"
+	},
+	"10" : {
+		"nombres_apellidos" : "Edu José Villegas Zea",
+		"usuario" : "evillegas",
+		"dni" : "12345678",
+		"perfil" : "user",
+		"sexo" : "Masculino"
+	}
+}

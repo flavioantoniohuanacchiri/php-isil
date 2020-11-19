@@ -1,0 +1,223 @@
+{
+    "1": {
+        "razon": "ISIL S.A.",
+        "ruc": "20100134455",
+        "direccion": "Av. La Fontana 955",
+        "distrito": "La Molina",
+        "actualizacion": "2003-11-16",
+		"estado": "Activo",
+        "created_at": "",
+        "updated_at": "",
+        "deleted_at": ""
+    },
+    "2": {
+        "razon": "COESTI S.A.",
+        "ruc": "20134534950",
+        "direccion": "Calle Los Negocios 955",
+        "distrito": "Surquillo",
+        "actualizacion": "2003-11-16",
+        "estado": "Activo",
+        "created_at": "",
+        "updated_at": "",
+        "deleted_at": ""
+    },
+    "3": {
+        "razon": "NICO S.A.",
+        "ruc": "20320134755",
+        "direccion": "Av. La Mar 340",
+        "distrito": "Miraflores",
+        "actualizacion": "2005-11-16",
+        "estado": "Baja",
+        "created_at": "",
+        "updated_at": "",
+        "deleted_at": ""
+    },
+   "4": {
+        "razon": "NICO S.A.",
+        "ruc": "20320134755",
+        "direccion": "Av. La Mar 340",
+        "distrito": "Miraflores",
+        "actualizacion": "2005-11-16",
+        "estado": "Baja",
+        "created_at": "",
+        "updated_at": "",
+        "deleted_at": ""
+    },
+   "5": {
+        "razon": "NICO S.A.",
+        "ruc": "20320134755",
+        "direccion": "Av. La Mar 340",
+        "distrito": "Miraflores",
+        "actualizacion": "2005-11-16",
+        "estado": "Baja",
+        "created_at": "",
+        "updated_at": "",
+        "deleted_at": ""
+    },
+   "6": {
+        "razon": "NICO S.A.",
+        "ruc": "20320134755",
+        "direccion": "Av. La Mar 340",
+        "distrito": "Miraflores",
+        "actualizacion": "2005-11-16",
+        "estado": "Baja",
+        "created_at": "",
+        "updated_at": "",
+        "deleted_at": ""
+    },
+   "7": {
+        "razon": "NICO S.A.",
+        "ruc": "20320134755",
+        "direccion": "Av. La Mar 340",
+        "distrito": "Miraflores",
+        "actualizacion": "2005-11-16",
+        "estado": "Baja",
+        "created_at": "",
+        "updated_at": "",
+        "deleted_at": ""
+    },
+   "8": {
+        "razon": "NICO S.A.",
+        "ruc": "20320134755",
+        "direccion": "Av. La Mar 340",
+        "distrito": "Miraflores",
+        "actualizacion": "2005-11-16",
+        "estado": "Baja",
+        "created_at": "",
+        "updated_at": "",
+        "deleted_at": ""
+    },
+   "9": {
+        "razon": "NICO S.A.",
+        "ruc": "20320134755",
+        "direccion": "Av. La Mar 340",
+        "distrito": "Miraflores",
+        "actualizacion": "2005-11-16",
+        "estado": "Baja",
+        "created_at": "",
+        "updated_at": "",
+        "deleted_at": ""
+    },
+   "10": {
+        "razon": "NICO S.A.",
+        "ruc": "20320134755",
+        "direccion": "Av. La Mar 340",
+        "distrito": "Miraflores",
+        "actualizacion": "2005-11-16",
+        "estado": "Baja",
+        "created_at": "",
+        "updated_at": "",
+        "deleted_at": ""
+    },
+   "11": {
+        "razon": "NICO S.A.",
+        "ruc": "20320134755",
+        "direccion": "Av. La Mar 340",
+        "distrito": "Miraflores",
+        "actualizacion": "2005-11-16",
+        "estado": "Baja",
+        "created_at": "",
+        "updated_at": "",
+        "deleted_at": ""
+    },
+   "12": {
+        "razon": "NICO S.A.",
+        "ruc": "20320134755",
+        "direccion": "Av. La Mar 340",
+        "distrito": "Miraflores",
+        "actualizacion": "2005-11-16",
+        "estado": "Baja",
+        "created_at": "",
+        "updated_at": "",
+        "deleted_at": ""
+    },
+   "13": {
+        "razon": "NICO S.A.",
+        "ruc": "20320134755",
+        "direccion": "Av. La Mar 340",
+        "distrito": "Miraflores",
+        "actualizacion": "2005-11-16",
+        "estado": "Baja",
+        "created_at": "",
+        "updated_at": "",
+        "deleted_at": ""
+    },
+   "14": {
+        "razon": "NICO S.A.",
+        "ruc": "20320134755",
+        "direccion": "Av. La Mar 340",
+        "distrito": "Miraflores",
+        "actualizacion": "2005-11-16",
+        "estado": "Baja",
+        "created_at": "",
+        "updated_at": "",
+        "deleted_at": ""
+    },
+   "15": {
+        "razon": "NICO S.A.",
+        "ruc": "20320134755",
+        "direccion": "Av. La Mar 340",
+        "distrito": "Miraflores",
+        "actualizacion": "2005-11-16",
+        "estado": "Baja",
+        "created_at": "",
+        "updated_at": "",
+        "deleted_at": ""
+    },
+   "16": {
+        "razon": "NICO S.A.",
+        "ruc": "20320134755",
+        "direccion": "Av. La Mar 340",
+        "distrito": "Miraflores",
+        "actualizacion": "2005-11-16",
+        "estado": "Baja",
+        "created_at": "",
+        "updated_at": "",
+        "deleted_at": ""
+    },
+   "17": {
+        "razon": "NICO S.A.",
+        "ruc": "20320134755",
+        "direccion": "Av. La Mar 340",
+        "distrito": "Miraflores",
+        "actualizacion": "2005-11-16",
+        "estado": "Baja",
+        "created_at": "",
+        "updated_at": "",
+        "deleted_at": ""
+    },
+   "18": {
+        "razon": "NICO S.A.",
+        "ruc": "20320134755",
+        "direccion": "Av. La Mar 340",
+        "distrito": "Miraflores",
+        "actualizacion": "2005-11-16",
+        "estado": "Baja",
+        "created_at": "",
+        "updated_at": "",
+        "deleted_at": ""
+    },
+   "19": {
+        "razon": "NICO S.A.",
+        "ruc": "20320134755",
+        "direccion": "Av. La Mar 340",
+        "distrito": "Miraflores",
+        "actualizacion": "2005-11-16",
+        "estado": "Baja",
+        "created_at": "",
+        "updated_at": "",
+        "deleted_at": ""
+    },
+   "20": {
+        "razon": "NICO S.A.",
+        "ruc": "20320134755",
+        "direccion": "Av. La Mar 340",
+        "distrito": "Miraflores",
+        "actualizacion": "2005-11-16",
+        "estado": "Baja",
+        "created_at": "",
+        "updated_at": "",
+        "deleted_at": ""
+    }
+
+}

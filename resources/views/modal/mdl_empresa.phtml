@@ -1,0 +1,59 @@
+<!-- Modal -->
+<div class="modal fade" id="mdlUsuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Empresa</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <form id="form-usuario" method="POST" url="functions/usuario_class.php">
+              <input type="hidden" name="id" id="txt_id" value="">
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="form-group">
+                        <label>Razón Social*</label>
+                        <input type="text" name="razon_social" id="txt_razon_social" required class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                      <div class="form-group">
+                        <label>Ruc*</label>
+                        <input type="text" name="ruc" id="txt_ruc" required class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                       <div class="form-group">
+                          <label>Dirección*</label>
+                          <input type="text" name="direccion" id="txt_direccion" required class="form-control">
+                      </div>
+                  </div>
+                   <div class="col-md-12">
+                       <div class="form-group">
+                          <label>Ciudad*</label>
+                          <input type="text" name="ciudad" id="txt_ciudad" required class="form-control">
+                      </div>
+                  </div>
+                  <div class="col-md-12">
+                      <div class="form-group">
+                        <label>Estado*</label>
+                        <select class="form-control" id="slct_estado" name="estado">
+                            <option value="Seleccione"></option>
+                            <option value="Masculino">Activo</option>
+                            <option value="Femenino">Inactivo</option>
+                        </select>
+                      </div>
+                  </div>
+                  
+              </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" id="btn-guardar">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>

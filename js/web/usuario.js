@@ -13,6 +13,10 @@ $('#mdlUsuario').on('show.bs.modal', function (event) {
 				$("#txt_ape_paterno").val(objData.ape_paterno);
 				$("#txt_ape_materno").val(objData.ape_materno);
 				$("#slct_sexo").val(objData.sexo);
+				$("#txt_carrera").val(objData.carrera);
+				$("#txt_grado").val(objData.grado);
+				$("#txt_universidad").val(objData.universidad);
+				$("#slct_anio_egreso").val(objData.anio_egreso);
 				removeLoading();
 			}
 		});
@@ -64,9 +68,22 @@ $(".btn-delete").click(function(e) {
 	  confirmButtonText: `Eliminar`,
 	  cancelButtonText: `Cancelar`,
 	}).then((result) => {
-	  /* Read more about isConfirmed, isDenied below */
-	  if (result.isConfirmed) {
-	    	alert(id);
-	  }
+		showLoading();
+		  /* Read more about isConfirmed, isDenied below */
+		  if (result.isConfirmed) {
+		    	$.ajax({
+		    		type : "GET",
+		    		url : "usuario.php?action=delete&id="+id,
+		    		success : function(obj) {
+		    			var objData = JSON.parse(obj);
+		    			Swal.fire(
+							'Muy Bien!',
+							objData.msj,
+							'success'
+						);
+		    			removeLoading();
+		    		}
+		    	})
+		  }
 	});
 })

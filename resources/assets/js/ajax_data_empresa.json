@@ -1,0 +1,52 @@
+{
+    "draw": 1,
+    "recordsTotal": 57,
+    "recordsFiltered": 57,
+    "data": [{
+            "RazonSocial": "IBM",
+            "RUC": "20511214780",
+            "Direccion": "AV La Molina S/N Santa Catalina",
+            "last_at": "2020-05-01 ",
+            "status": "Active",
+            "city": "Lima",
+            "created_at": "2020-06-15",
+            "update_at": "",
+            "deleted_at": ""
+        },
+        {
+            "RazonSocial": "COBOL S.A",
+            "RUC": "20511255780",
+            "Direccion": "AV Planicie S/N Santa Catalina",
+            "last_at": "",
+            "status": "Active",
+            "city": "Lima",
+            "created_at": "2020-05-01",
+            "update_at": "",
+            "deleted_at": ""
+        },
+        {
+            "RazonSocial": "XIT S.A",
+            "RUC": "110511255780",
+            "Direccion": "Miami 23 Florida ",
+            "last_at": "",
+            "status": "Active",
+            "city": "Florida",
+            "created_at": "2020-05-01",
+            "update_at": "",
+            "deleted_at": ""
+        },
+        {
+            "RazonSocial": "Disrruptors S.A",
+            "RUC": "122511255780",
+            "Direccion": "Jr Piura 123 La Libertad ",
+            "last_at": "",
+            "status": "Active",
+            "city": "La Libertad",
+            "created_at": "2020-12-01",
+            "update_at": "",
+            "deleted_at": ""
+        }
+
+
+    ]
+}

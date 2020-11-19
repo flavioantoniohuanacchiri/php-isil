@@ -3,7 +3,7 @@
 	if (isset($_GET)) {
 		if (count($_GET) > 0) {
 			if (isset($_GET["id"])) {
-				$usuarioJson = file_get_contents(__DIR__."/resources/assets/js/usuario.json");
+				$usuarioJson = file_get_contents(__DIR__."/resources/assets/js/empresa.json");
 				$usuariosData = json_decode($usuarioJson, true);
 				$tmpId = $_GET["id"];
 				if (isset($usuariosData[$tmpId])) {
@@ -17,29 +17,29 @@
 	}
 	if (isset($_POST)) {
 		if (count($_POST) > 0) {
-			$usuarioJson = file_get_contents(__DIR__."/resources/assets/js/usuario.json");
+			$usuarioJson = file_get_contents(__DIR__."/resources/assets/js/empresa.json");
 			$usuariosData = json_decode($usuarioJson, true);
 			if (isset($_POST["id"]) && $_POST["id"] !="") {
 				$tmpId = $_POST["id"];
 				$tmpItem = $usuariosData[$tmpId];
 				//print_r($tmpItem);
-				$usuariosData[$tmpId]["nombres"] = $_POST["nombres"];
-				$usuariosData[$tmpId]["ape_paterno"] = $_POST["ape_paterno"];
-				$usuariosData[$tmpId]["ape_materno"] = $_POST["ape_materno"];
-				$usuariosData[$tmpId]["sexo"] = $_POST["sexo"];
+				$usuariosData[$tmpId]["razon_social"] = $_POST["razon_social"];
+				$usuariosData[$tmpId]["ruc"] = $_POST["ruc"];
+				$usuariosData[$tmpId]["direccion"] = $_POST["direccion"];
 				$usuariosData[$tmpId]["updated_at"] = date("Y-m-d H:i:s");
+				$usuariosData[$tmpId]["estado"] = $_POST["estado"];
 				//print_r($tmpItem); exit;
 				$usuarioJson = json_encode($usuariosData, JSON_UNESCAPED_UNICODE);
-				file_put_contents(__DIR__."/resources/assets/js/usuario.json", $usuarioJson);
+				file_put_contents(__DIR__."/resources/assets/js/empresa.json", $usuarioJson);
 				$response = ["rst" => 1, "msj"=>"Usuario Actualizado"];
 				echo json_encode($response);
 				exit;
 			} else {
 				$tmpItem = [];
-				$tmpItem["nombres"] = $_POST["nombres"];
-				$tmpItem["ape_paterno"] = $_POST["ape_paterno"];
-				$tmpItem["ape_materno"] = $_POST["ape_materno"];
-				$tmpItem["sexo"] = $_POST["sexo"];
+				$tmpItem["razon_social"] = $_POST["razon_social"];
+				$tmpItem["ruc"] = $_POST["ruc"];
+				$tmpItem["direccion"] = $_POST["direccion"];
+				$tmpItem["estado"] = $_POST["estado"];
 				$tmpItem["created_at"] = date("Y-m-d H:i:s");
 				$tmpItem["updated_at"] = "";
 				$tmpItem["deleted_at"] = "";
@@ -48,7 +48,7 @@
 				$size = $size +1;
 				$usuariosData[$size] = $tmpItem;
 				$usuarioJson = json_encode($usuariosData, JSON_UNESCAPED_UNICODE);
-				file_put_contents(__DIR__."/resources/assets/js/usuario.json", $usuarioJson);
+				file_put_contents(__DIR__."/resources/assets/js/empresa.json", $usuarioJson);
 				$response = ["rst" => 1, "msj"=>"Usuario Creado"];
 				echo json_encode($response);
 				exit;
@@ -73,12 +73,12 @@
 		?>
 		<div class="container">
 			<?php 
-				//echo file_get_contents(__DIR__."/resources/assets/js/usuario.json"); exit;
-				$usuarioJson = file_get_contents(__DIR__."/resources/assets/js/usuario.json");
+				//echo file_get_contents(__DIR__."/resources/assets/js/empresa.json"); exit;
+				$usuarioJson = file_get_contents(__DIR__."/resources/assets/js/empresa.json");
 				$usuariosData = json_decode($usuarioJson, true);
 			?>
 			<div class="box box-primary content-table">
-				<h1>Listado de Usuarios <div style="width: auto; display: inline-block; float: right;">
+				<h1>Listado de Empresas <div style="width: auto; display: inline-block; float: right;">
 					<a href="#" class="btn btn-primary"
 						data-toggle="modal"
 						data-target="#mdlUsuario">
@@ -89,11 +89,11 @@
 						<thead>
 						    <tr>
 						      <th>#</th>
-						      <th>Nombres</th>
-						      <th>Ape Paterno</th>
-						      <th>Ape Materno</th>
-						      <th>Sexo</th>
+						      <th>Razón Social</th>
+						      <th>RUC</th>
+						      <th>Direccion</th>
 						      <th>U.Act.</th>
+						      <th>Estado</th>
 						      <th>[]</th>
 						    </tr>
 						</thead>
@@ -102,15 +102,15 @@
 						  			//print_r($usuariosData); exit;
 						    		foreach ($usuariosData as $key => $value) {
 						    			$tmpIndex = (int)$key;
-						    			$tmpIndex = $tmpIndex+1;
+						    			//$tmpIndex = $tmpIndex+1;
 						    	?>
 							    <tr>
 							      <th><?php echo $tmpIndex;?></th>
-							      <td><?php echo $value["nombres"];?></td>
-							      <td><?php echo $value["ape_paterno"];?></td>
-							      <td><?php echo $value["ape_materno"];?></td>
-							      <td><?php echo $value["sexo"];?></td>
+							      <td><?php echo $value["razon_social"];?></td>
+							      <td><?php echo $value["ruc"];?></td>
+							      <td><?php echo $value["direccion"];?></td>
 							      <td><?php echo $value["updated_at"];?></td>
+							      <td><?php echo $value["estado"];?></td>
 							      <td>
 							      	<a href="#"
 							      		data-toggle="modal"
@@ -132,7 +132,7 @@
 			
 		</div>
 		<?php 
-			include __DIR__."/resources/views/modal/mdl_usuario.phtml";
+			include __DIR__."/resources/views/modal/mdl_empresa.phtml";
 		?>
 		<?php
 			include __DIR__."/resources/views/includes/script.phtml";
@@ -151,6 +151,6 @@
 			    //new $.fn.dataTable.FixedHeader( table );
 			} );
 		</script>
-		<script type="text/javascript" src="js/web/usuario.js"></script>
+		<script type="text/javascript" src="js/web/empresa.js"></script>
 	</body>
 </html>

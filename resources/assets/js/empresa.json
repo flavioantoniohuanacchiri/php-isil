@@ -1,0 +1,89 @@
+{
+    "1": {
+        "razon_social": "ISIL SA",
+        "ruc": "1111111111",
+        "direccion": "Av. La Fontana 955",
+        "updated_at": "2020-11-19 02:29:44",
+        "status": "Activo"
+    },
+    "2": {
+        "razon_social": "Chifon",
+        "ruc": "2222222222",
+        "direccion": "Av. La Fontana 966",
+        "updated_at": "2020-11-19 02:33:00",
+        "deleted_at": "",
+        "status": "Activo"
+    },
+    "3": {
+        "razon_social": "Chifita",
+        "ruc": "3333333333",
+        "direccion": "Av. Sucre 222",
+        "updated_at": "2020-11-19 02:49:59",
+        "deleted_at": "",
+        "status": "Activo"
+    },
+    "4": {
+        "razon_social": "Ceviches",
+        "ruc": "4444444444",
+        "direccion": "Av. Las Flores 222",
+        "updated_at": "2020-11-19 02:50:06",
+        "deleted_at": "",
+        "status": "Inactivo"
+    },
+    "5": {
+        "razon_social": "Empresa",
+        "ruc": "55555555",
+        "direccion": "Av. Peritas 222",
+        "updated_at": "",
+        "deleted_at": "",
+        "status": "Activo"
+    },
+    "6": {
+        "razon_social": "Empresa 6",
+        "ruc": "55555555",
+        "direccion": "Av. Peritas 222",
+        "updated_at": "",
+        "deleted_at": "",
+        "status": "Activo"
+    },
+    "7": {
+        "razon_social": "Empresa 7",
+        "ruc": "55555555",
+        "direccion": "Av. Peritas 222",
+        "updated_at": "",
+        "deleted_at": "",
+        "status": "Activo"
+    },
+    "8": {
+        "razon_social": "Empresa 8",
+        "ruc": "55555555",
+        "direccion": "Av. Peritas 222",
+        "updated_at": "",
+        "deleted_at": "",
+        "status": "Activo"
+    },
+    "9": {
+        "razon_social": "Empresa 9",
+        "ruc": "55555555",
+        "direccion": "Av. Peritas 222",
+        "updated_at": "",
+        "deleted_at": "",
+        "status": "Activo"
+    },
+    "10": {
+        "razon_social": "Empresa 10",
+        "ruc": "55555555",
+        "direccion": "Av. Peritas 222",
+        "updated_at": "",
+        "deleted_at": "",
+        "status": "Activo"
+    },
+    "11": {
+        "razon_social": "Empresa 11",
+        "ruc": "55555555",
+        "direccion": "Av. Peritas 222",
+        "updated_at": "",
+        "deleted_at": "",
+        "status": "Activo"
+    }
+}

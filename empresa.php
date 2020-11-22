@@ -3,12 +3,12 @@
 	if (isset($_GET)) {
 		if (count($_GET) > 0) {
 			if (isset($_GET["id"])) {
-				$usuarioJson = file_get_contents(__DIR__."/resources/assets/js/empresa.json");
-				$usuariosData = json_decode($usuarioJson, true);
+				$empresaJson = file_get_contents(__DIR__."/resources/assets/js/empresa.json");
+				$empresasData = json_decode($empresaJson, true);
 				$tmpId = $_GET["id"];
-				if (isset($usuariosData[$tmpId])) {
-					$usuariosData[$tmpId]["id"] = $tmpId;
-					echo json_encode($usuariosData[$tmpId]);
+				if (isset($empresasData[$tmpId])) {
+					$empresasData[$tmpId]["id"] = $tmpId;
+					echo json_encode($empresasData[$tmpId]);
 					exit;
 				}
 
@@ -17,21 +17,22 @@
 	}
 	if (isset($_POST)) {
 		if (count($_POST) > 0) {
-			$usuarioJson = file_get_contents(__DIR__."/resources/assets/js/empresa.json");
-			$usuariosData = json_decode($usuarioJson, true);
+			$empresaJson = file_get_contents(__DIR__."/resources/assets/js/empresa.json");
+			$empresasData = json_decode($empresaJson, true);
 			if (isset($_POST["id"]) && $_POST["id"] !="") {
 				$tmpId = $_POST["id"];
-				$tmpItem = $usuariosData[$tmpId];
+				$tmpItem = $empresasData[$tmpId];
 				//print_r($tmpItem);
-				$usuariosData[$tmpId]["razon"] = $_POST["razon"];
-				$usuariosData[$tmpId]["ruc"] = $_POST["ruc"];
-				$usuariosData[$tmpId]["direccion"] = $_POST["direccion"];
-				$usuariosData[$tmpId]["actualizacion"] = $_POST["actualizacion"];
-				$usuariosData[$tmpId]["estado"] = $_POST["estado"];
+				$empresasData[$tmpId]["razon"] = $_POST["razon"];
+				$empresasData[$tmpId]["ruc"] = $_POST["ruc"];
+				$empresasData[$tmpId]["direccion"] = $_POST["direccion"];
+				$empresasData[$tmpId]["distrito"] = $_POST["distrito"];
+				$empresasData[$tmpId]["actualizacion"] = $_POST["actualizacion"];
+				$empresasData[$tmpId]["estado"] = $_POST["estado"];
 				//print_r($tmpItem); exit;
-				$usuarioJson = json_encode($usuariosData, JSON_UNESCAPED_UNICODE);
-				file_put_contents(__DIR__."/resources/assets/js/empresa.json", $usuarioJson);
-				$response = ["rst" => 1, "msj"=>"Usuario Actualizado"];
+				$empresaJson = json_encode($empresasData, JSON_UNESCAPED_UNICODE);
+				file_put_contents(__DIR__."/resources/assets/js/empresa.json", $empresaJson);
+				$response = ["rst" => 1, "msj"=>"Empresa Actualizada"];
 				echo json_encode($response);
 				exit;
 			} else {
@@ -39,17 +40,18 @@
 				$tmpItem["razon"] = $_POST["razon"];
 				$tmpItem["ruc"] = $_POST["ruc"];
 				$tmpItem["direccion"] = $_POST["direccion"];
+				$tmpItem["distrito"] = $_POST["distrito"];
 				$tmpItem["actualizacion"] = $_POST["actualizacion"];
 				$tmpItem["estado"] = $_POST["estado"];
 				$tmpItem["created_at"] = date("Y-m-d H:i:s");
 				$tmpItem["updated_at"] = "";
 				$tmpItem["deleted_at"] = "";
 
-				$size = count($usuariosData);
+				$size = count($empresasData);
 				$size = $size +1;
-				$usuariosData[$size] = $tmpItem;
-				$usuarioJson = json_encode($usuariosData, JSON_UNESCAPED_UNICODE);
-				file_put_contents(__DIR__."/resources/assets/js/empresa.json", $usuarioJson);
+				$empresasData[$size] = $tmpItem;
+				$empresaJson = json_encode($empresasData, JSON_UNESCAPED_UNICODE);
+				file_put_contents(__DIR__."/resources/assets/js/empresa.json", $empresaJson);
 				$response = ["rst" => 1, "msj"=>"Empresa Creada"];
 				echo json_encode($response);
 				exit;
@@ -81,7 +83,7 @@
 			<div class="box box-primary content-table">
 				<h1>Listado de Empresas </h1>
 			<div class="table-responsive-md">
-  				<table id="table-usuarios" class="table table-striped table-bordered nowrap" style="width:100%">
+  				<table id="table-empresas" class="table table-striped table-bordered nowrap" style="width:100%">
 						<thead>
 						    <tr>
 						      <th>#</th>
@@ -95,7 +97,7 @@
 						</thead>
 						<tbody>
 						  		<?php 
-						  			//print_r($usuariosData); exit;
+						  			//print_r($empresasData); exit;
 						    		foreach ($empresaData as $key => $value) {
 						    			$tmpIndex = (int)$key;
 						    			//$tmpIndex = $tmpIndex+1;
@@ -110,7 +112,7 @@
 							      <td>
 							      	<a href="#"
 							      		data-toggle="modal"
-							      		data-target="#mdlUsuario"
+							      		data-target="#mdlEmpresa"
 							      		class="btn btn-primary"
 							      		data-id="<?php echo $key;?>">
 							      		<i class="fas fa-pencil-alt"></i>
@@ -128,14 +130,14 @@
 			
 		</div>
 		<?php 
-			include __DIR__."/resources/views/modal/mdl_usuario.phtml";
+			include __DIR__."/resources/views/modal/mdl_empresa.phtml";
 		?>
 		<?php
 			include __DIR__."/resources/views/includes/script.phtml";
 			include __DIR__."/resources/views/includes/loading.phtml";
 		?>
 		<script type="text/javascript">
-			var table = $('#table-usuarios').DataTable({
+			var table = $('#table-empresas').DataTable({
 			   	"language": {
 			        "url": "/Spanish.json"
 			    },

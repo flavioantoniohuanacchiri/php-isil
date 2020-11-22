@@ -1,36 +1,38 @@
-$('#mdlUsuario').on('show.bs.modal', function (event) {
+$('#mdlEmpresa').on('show.bs.modal', function (event) {
 	var id = $(event.relatedTarget).data("id");
 	if (typeof id !=undefined && typeof id !="undefined") {
 		showLoading();
-		var usuario = $.ajax({
+		var empresa = $.ajax({
 			type : "GET",
 			url : "empresa.php",
 			data : {id: id},
 			success : function(obj) {
 				var objData = JSON.parse(obj);
 				$("#txt_id").val(objData.id);
-				$("#txt_nombres").val(objData.razon);
-				$("#txt_ape_paterno").val(objData.ruc);
-				$("#txt_ape_materno").val(objData.direccion);
-				$("#slct_sexo").val(objData.distrito);
+				$("#txt_razon").val(objData.razon);
+				$("#txt_ruc").val(objData.ruc);
+				$("#txt_direccion").val(objData.direccion);
+				$("#txt_distrito").val(objData.distrito);
+				$("#txt_actualizacion").val(objData.actualizacion);
+				$("#txt_estado").val(objData.estado);
 				removeLoading();
 			}
 		});
 	}
 
 });
-$('#mdlUsuario').on('show.bs.modal', function (event) {
+$('#mdlEmpresa').on('show.bs.modal', function (event) {
 	$("input[type=text], select, #txt_id").val("");
 });
 $("#btn-guardar").click(function() {
-	$("#form-usuario").submit();
+	$("#form-empresa").submit();
 });
-$("#form-usuario").submit(function() {
+$("#form-empresa").submit(function() {
 	showLoading();
 	$.ajax({
 		type : "POST",
-		url : "usuario.php",
-		data : $("#form-usuario").serialize(),
+		url : "empresa.php",
+		data : $("#form-empresa").serialize(),
 		success : function(obj) {
 			var objData = JSON.parse(obj);
 			if (parseInt(objData.rst) == 1) {

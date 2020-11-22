@@ -1,0 +1,162 @@
+
+{
+  "1":{
+      "nombres":"Julio Ramón",
+      "ape_paterno":"Paredes",
+      "ape_materno":"Cervantes",
+      "sexo":"Masculino",
+      "posicion": "Asistente de ventas",
+      "area": "Area de Ventas",
+      "salario": "$1,200,000",
+      "start_date": "9th Oct 09",
+      "created_at":"2020-11-16 17:30:00",
+      "updated_at":"2020-11-18 19:08:52",
+      "deleted_at":"2020-11-18 20:02:13"
+  },
+
+  "2":{
+      "nombres":"Julio Ramón",
+      "ape_paterno":"Paredes",
+      "ape_materno":"Cervantes",
+      "sexo":"Masculino",
+      "posicion": "Asistente de ventas",
+      "area": "Area de Ventas",
+      "salario": "$1,200,000",
+      "start_date": "9th Oct 09",
+      "created_at":"2020-11-16 17:30:00",
+      "updated_at":"2020-11-18 19:08:52",
+      "deleted_at":"2020-11-18 20:02:13"
+    },
+
+  "3":{
+      "nombres":"Julio Ramón",
+      "ape_paterno":"Paredes",
+      "ape_materno":"Cervantes",
+      "sexo":"Masculino",
+      "posicion": "Asistente de ventas",
+      "area": "Area de Ventas",
+      "salario": "$1,200,000",
+      "start_date": "9th Oct 09",
+      "created_at":"2020-11-16 17:30:00",
+      "updated_at":"2020-11-18 19:08:52",
+      "deleted_at":"2020-11-18 20:02:13"
+    },
+
+  "4":{
+      "nombres":"Julio Ramón",
+      "ape_paterno":"Paredes",
+      "ape_materno":"Cervantes",
+      "sexo":"Masculino",
+      "posicion": "Asistente de ventas",
+      "area": "Area de Ventas",
+      "salario": "$1,200,000",
+      "start_date": "9th Oct 09",
+      "created_at":"2020-11-16 17:30:00",
+      "updated_at":"2020-11-18 19:08:52",
+      "deleted_at":"2020-11-18 20:02:13"
+    },
+
+  "5":{
+      "nombres":"Julio Ramón",
+      "ape_paterno":"Paredes",
+      "ape_materno":"Cervantes",
+      "sexo":"Masculino",
+      "posicion": "Asistente de ventas",
+      "area": "Area de Ventas",
+      "salario": "$1,200,000",
+      "start_date": "9th Oct 09",
+      "created_at":"2020-11-16 17:30:00",
+      "updated_at":"2020-11-18 19:08:52",
+      "deleted_at":"2020-11-18 20:02:13"
+    },
+
+  "6":{
+      "nombres":"Julio Ramón",
+      "ape_paterno":"Paredes",
+      "ape_materno":"Cervantes",
+      "sexo":"Masculino",
+      "posicion": "Asistente de ventas",
+      "area": "Area de Ventas",
+      "salario": "$1,200,000",
+      "start_date": "9th Oct 09",
+      "created_at":"2020-11-16 17:30:00",
+      "updated_at":"2020-11-18 19:08:52",
+      "deleted_at":"2020-11-18 20:02:13"
+    },
+
+  "7":{
+      "nombres":"Julio Ramón",
+      "ape_paterno":"Paredes",
+      "ape_materno":"Cervantes",
+      "sexo":"Masculino",
+      "posicion": "Asistente de ventas",
+      "area": "Area de Ventas",
+      "salario": "$1,200,000",
+      "start_date": "9th Oct 09",
+      "created_at":"2020-11-16 17:30:00",
+      "updated_at":"2020-11-18 19:08:52",
+      "deleted_at":"2020-11-18 20:02:13"
+    },
+
+  "8":{
+      "nombres":"Julio Ramón",
+      "ape_paterno":"Paredes",
+      "ape_materno":"Cervantes",
+      "sexo":"Masculino",
+      "posicion": "Asistente de ventas",
+      "area": "Area de Ventas",
+      "salario": "$1,200,000",
+      "start_date": "9th Oct 09",
+      "created_at":"2020-11-16 17:30:00",
+      "updated_at":"2020-11-18 19:08:52",
+      "deleted_at":"2020-11-18 20:02:13"
+    },
+
+  "9":{
+      "nombres":"Julio Ramón",
+      "ape_paterno":"Paredes",
+      "ape_materno":"Cervantes",
+      "sexo":"Masculino",
+      "posicion": "Asistente de ventas",
+      "area": "Area de Ventas",
+      "salario": "$1,200,000",
+      "start_date": "9th Oct 09",
+      "created_at":"2020-11-16 17:30:00",
+      "updated_at":"2020-11-18 19:08:52",
+      "deleted_at":"2020-11-18 20:02:13"
+    },
+
+  "10":{
+      "nombres":"Julio Ramón",
+      "ape_paterno":"Paredes",
+      "ape_materno":"Cervantes",
+      "sexo":"Masculino",
+      "posicion": "Asistente de ventas",
+      "area": "Area de Ventas",
+      "salario": "$1,200,000",
+      "start_date": "9th Oct 09",
+      "created_at":"2020-11-16 17:30:00",
+      "updated_at":"2020-11-18 19:08:52",
+      "deleted_at":"2020-11-18 20:02:13"
+    },
+
+  "11":{
+      "nombres":"Julio Ramón",
+      "ape_paterno":"Paredes",
+      "ape_materno":"Cervantes",
+      "sexo":"Masculino",
+      "posicion": "Asistente de ventas",
+      "area": "Area de Ventas",
+      "salario": "$1,200,000",
+      "start_date": "9th Oct 09",
+      "created_at":"2020-11-16 17:30:00",
+      "updated_at":"2020-11-18 19:08:52",
+      "deleted_at":"2020-11-18 20:02:13"
+    },
+
+}
+
+
+
+
+

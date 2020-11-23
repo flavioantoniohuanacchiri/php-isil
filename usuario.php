@@ -45,8 +45,12 @@
 							      <td><?php echo $value["ape_materno"];?></td>
 							      <td><?php echo $value["sexo"];?></td>
 							      <td>
-							      	<a href="#" data-toggle="modal" data-target="#mdlUsuario" class="btn btn-primary" data-id="<?php echo $value['id'];?>">
-							      		<i class="fas fa-eye"></i>
+							      	<a 	href="#" 
+									  	data-toggle="modal" 
+										data-target="#mdlUsuario" 
+										class="btn btn-primary" 
+										data-id="<?php echo $value['id'];?>">
+									  <i class="fas fa-pencil-alt"></i>
 							      	</a>
 							      	<button class="btn btn-danger">
 							      		<i class="fas fa-trash"></i>

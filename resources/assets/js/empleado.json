@@ -1,1 +1,22 @@
-{"1":{"nombres":"Joseph Jesús 3333","ape_paterno":"Jimenez","ape_materno":"Sanchez","sexo":"Masculino","created_at":"2020-11-16 17:30:00","updated_at":"2020-11-18 19:08:52","deleted_at":"2020-11-22 21:54:13"},"2":{"nombres":"Pedro","ape_paterno":"Perez","ape_materno":"Ramos","sexo":"Masculino","created_at":"2020-11-16 17:30:00","updated_at":"2020-11-23 00:39:27","deleted_at":"","estado":"Activo"},"3":{"nombres":"Liz","ape_paterno":"Gutierrez","ape_materno":"Mejia","sexo":"Femenino","estado":"Activo","created_at":"2020-11-23 00:39:47","updated_at":"","deleted_at":"2020-11-23 00:40:00"},"undefined":{"deleted_at":"2020-11-23 00:39:53"}}
+{
+    "1": {
+        "nombres": "Pedro",
+        "ape_paterno": "Perez",
+        "ape_materno": "Ramos",
+        "sexo": "Masculino",
+        "created_at": "2020-11-16 17:30:00",
+        "updated_at": "2020-11-23 00:39:27",
+        "deleted_at": "",
+        "estado": "Activo"
+    },
+    "2": {
+        "nombres": "Liz",
+        "ape_paterno": "Gutierrez",
+        "ape_materno": "Mejia",
+        "sexo": "Femenino",
+        "estado": "Activo",
+        "created_at": "2020-11-23 00:39:47",
+        "updated_at": "",
+        "deleted_at": ""
+    }
+}

@@ -5,13 +5,13 @@
 			if (isset($_GET["action"])) {
 				switch ($_GET["action"]) {
 					case 'delete':
-						$usuarioJson = file_get_contents(__DIR__."/resources/assets/js/usuario.json");
-						$usuariosData = json_decode($usuarioJson, true);
+						$perfilJson = file_get_contents(__DIR__."/resources/assets/js/perfil.json");
+						$perfilData = json_decode($perfilJson, true);
 						$tmpId = $_GET["id"];
-						$usuariosData[$tmpId]["deleted_at"] = date("Y-m-d H:i:s");
-						$usuarioJson = json_encode($usuariosData, JSON_UNESCAPED_UNICODE);
-						file_put_contents(__DIR__."/resources/assets/js/usuario.json", $usuarioJson);
-						$response = ["rst" => 1, "msj"=>"Usuario Eliminado"];
+						$perfilData[$tmpId]["deleted_at"] = date("Y-m-d H:i:s");
+						$perfilJson = json_encode($perfilData, JSON_UNESCAPED_UNICODE);
+						file_put_contents(__DIR__."/resources/assets/js/perfil.json", $perfilJson);
+						$response = ["rst" => 1, "msj"=>"Perfil Eliminado"];
 						echo json_encode($response);
 						exit;
 						break;
@@ -22,12 +22,12 @@
 				}
 			}
 			if (isset($_GET["id"])) {
-				$usuarioJson = file_get_contents(__DIR__."/resources/assets/js/usuario.json");
-				$usuariosData = json_decode($usuarioJson, true);
+				$perfilJson = file_get_contents(__DIR__."/resources/assets/js/perfil.json");
+				$perfilData = json_decode($perfilJson, true);
 				$tmpId = $_GET["id"];
-				if (isset($usuariosData[$tmpId])) {
-					$usuariosData[$tmpId]["id"] = $tmpId;
-					echo json_encode($usuariosData[$tmpId]);
+				if (isset($perfilData[$tmpId])) {
+					$perfilData[$tmpId]["id"] = $tmpId;
+					echo json_encode($perfilData[$tmpId]);
 					exit;
 				}
 
@@ -36,49 +36,41 @@
 	}
 	if (isset($_POST)) {
 		if (count($_POST) > 0) {
-			$usuarioJson = file_get_contents(__DIR__."/resources/assets/js/usuario.json");
-			$usuariosData = json_decode($usuarioJson, true);
+			$perfilJson = file_get_contents(__DIR__."/resources/assets/js/perfil.json");
+			$perfilData = json_decode($perfilJson, true);
 			if (isset($_POST["id"]) && $_POST["id"] !="") {
 				$tmpId = $_POST["id"];
-				$tmpItem = $usuariosData[$tmpId];
+				$tmpItem = $perfilData[$tmpId];
 				//print_r($tmpItem);
-				$usuariosData[$tmpId]["nombres"] = $_POST["nombres"];
-				$usuariosData[$tmpId]["ape_paterno"] = $_POST["ape_paterno"];
-				$usuariosData[$tmpId]["ape_materno"] = $_POST["ape_materno"];
-				$usuariosData[$tmpId]["sexo"] = $_POST["sexo"];
-				$usuariosData[$tmpId]["carrera"] = $_POST["carrera"];
-				$usuariosData[$tmpId]["grado"] = $_POST["grado"];
-				$usuariosData[$tmpId]["universidad"] = $_POST["universidad"];
-				$usuariosData[$tmpId]["anio_egreso"] = (int)$_POST["anio_egreso"];
+				$perfilData[$tmpId]["codigo"] = $_POST["codigo"];
+				$perfilData[$tmpId]["perfil"] = $_POST["perfil"];
+				$perfilData[$tmpId]["descripcion"] = $_POST["descripcion"];
+				$perfilData[$tmpId]["estado"] = $_POST["estado"];
 
-				$usuariosData[$tmpId]["updated_at"] = date("Y-m-d H:i:s");
+				$perfilData[$tmpId]["updated_at"] = date("Y-m-d H:i:s");
 				//print_r($tmpItem); exit;
-				$usuarioJson = json_encode($usuariosData, JSON_UNESCAPED_UNICODE);
-				file_put_contents(__DIR__."/resources/assets/js/usuario.json", $usuarioJson);
-				$response = ["rst" => 1, "msj"=>"Usuario Actualizado"];
+				$perfilJson = json_encode($perfilData, JSON_UNESCAPED_UNICODE);
+				file_put_contents(__DIR__."/resources/assets/js/perfil.json", $perfilJson);
+				$response = ["rst" => 1, "msj"=>"Perfil Actualizado"];
 				echo json_encode($response);
 				exit;
 			} else {
 				$tmpItem = [];
-				$tmpItem["nombres"] = $_POST["nombres"];
-				$tmpItem["ape_paterno"] = $_POST["ape_paterno"];
-				$tmpItem["ape_materno"] = $_POST["ape_materno"];
-				$tmpItem["sexo"] = $_POST["sexo"];
-				$tmpItem["carrera"] = $_POST["carrera"];
-				$tmpItem["grado"] = $_POST["grado"];
-				$tmpItem["universidad"] = $_POST["universidad"];
-				$tmpItem["anio_egreso"] = (int)$_POST["anio_egreso"];
+				$tmpItem["codigo"] = $_POST["codigo"];
+				$tmpItem["perfil"] = $_POST["perfil"];
+				$tmpItem["descripcion"] = $_POST["descripcion"];
+				$tmpItem["estado"] = $_POST["estado"];
 				
 				$tmpItem["created_at"] = date("Y-m-d H:i:s");
 				$tmpItem["updated_at"] = "";
 				$tmpItem["deleted_at"] = "";
 
-				$size = count($usuariosData);
+				$size = count($perfilData);
 				$size = $size +1;
-				$usuariosData[$size] = $tmpItem;
-				$usuarioJson = json_encode($usuariosData, JSON_UNESCAPED_UNICODE);
-				file_put_contents(__DIR__."/resources/assets/js/usuario.json", $usuarioJson);
-				$response = ["rst" => 1, "msj"=>"Usuario Creado"];
+				$perfilData[$size] = $tmpItem;
+				$perfilJson = json_encode($perfilData, JSON_UNESCAPED_UNICODE);
+				file_put_contents(__DIR__."/resources/assets/js/perfil.json", $perfilJson);
+				$response = ["rst" => 1, "msj"=>"Perfil Creado"];
 				echo json_encode($response);
 				exit;
 			}
@@ -94,7 +86,7 @@
 		<?php
 			include __DIR__."/resources/views/includes/head.phtml";
 		?>
-		<title>Usuarios</title>
+		<title>Perfiles</title>
 	</head>
 	<body>
 		<?php
@@ -102,15 +94,15 @@
 		?>
 		<div class="container">
 			<?php 
-				//echo file_get_contents(__DIR__."/resources/assets/js/usuario.json"); exit;
-				$usuarioJson = file_get_contents(__DIR__."/resources/assets/js/usuario.json");
-				$usuariosData = json_decode($usuarioJson, true);
+				//echo file_get_contents(__DIR__."/resources/assets/js/perfil.json"); exit;
+				$perfilJson = file_get_contents(__DIR__."/resources/assets/js/perfil.json");
+				$perfilData = json_decode($perfilJson, true);
 			?>
 			<div class="box box-primary content-table">
-				<h1>Listado de Usuarios <div style="width: auto; display: inline-block; float: right;">
+				<h1>Listado de Perfiles <div style="width: auto; display: inline-block; float: right;">
 					<a href="#" class="btn btn-primary"
 						data-toggle="modal"
-						data-target="#mdlUsuario">
+						data-target="#mdlPerfil">
 						<i class="fas fa-plus"></i> Agregar</a>
 					</div></h1>
 			<div class="table-responsive-md">
@@ -118,32 +110,32 @@
 						<thead>
 						    <tr>
 						      <th>#</th>
-						      <th>Nombres</th>
-						      <th>Ape Paterno</th>
-						      <th>Ape Materno</th>
-						      <th>Sexo</th>
+						      <th>Código</th>
+						      <th>Perfil</th>
+						      <th>Descripción</th>
+						      <th>Estado</th>
 						      <th>U.Act.</th>
 						      <th>[]</th>
 						    </tr>
 						</thead>
 						<tbody>
 						  		<?php 
-						  			//print_r($usuariosData); exit;
-						    		foreach ($usuariosData as $key => $value) {
+						  			//print_r($perfilData); exit;
+						    		foreach ($perfilData as $key => $value) {
 						    			$tmpIndex = (int)$key;
 						    			if ($value["deleted_at"] == "") {
 						    	?>
 							    <tr>
 							      <th><?php echo $tmpIndex;?></th>
-							      <td><?php echo $value["nombres"];?></td>
-							      <td><?php echo $value["ape_paterno"];?></td>
-							      <td><?php echo $value["ape_materno"];?></td>
-							      <td><?php echo $value["sexo"];?></td>
+							      <td><?php echo $value["codigo"];?></td>
+							      <td><?php echo $value["perfil"];?></td>
+							      <td><?php echo $value["descripcion"];?></td>
+							      <td><?php echo $value["estado"];?></td>
 							      <td><?php echo $value["updated_at"];?></td>
 							      <td>
 							      	<a href="#"
 							      		data-toggle="modal"
-							      		data-target="#mdlUsuario"
+							      		data-target="#mdlPerfil"
 							      		class="btn btn-primary"
 							      		data-id="<?php echo $key;?>">
 							      		<i class="fas fa-pencil-alt"></i>
@@ -162,14 +154,14 @@
 			
 		</div>
 		<?php 
-			include __DIR__."/resources/views/modal/mdl_usuario.phtml";
+			include __DIR__."/resources/views/modal/mdl_perfil.phtml";
 		?>
 		<?php
 			include __DIR__."/resources/views/includes/script.phtml";
 			include __DIR__."/resources/views/includes/loading.phtml";
 		?>
 		<script type="text/javascript">
-			var table = $('#table-usuarios').DataTable({
+			var table = $('#table-perfil').DataTable({
 			   	"language": {
 			        "url": "/Spanish.json"
 			    },
@@ -181,6 +173,6 @@
 			    //new $.fn.dataTable.FixedHeader( table );
 			} );
 		</script>
-		<script type="text/javascript" src="js/web/usuario.js"></script>
+		<script type="text/javascript" src="js/web/perfil.js"></script>
 	</body>
 </html>

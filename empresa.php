@@ -1,4 +1,4 @@
-<?php 
+ <?php 
 	include __DIR__."/functions/session_helper.php";
 	if (isset($_GET)) {
 		if (count($_GET) > 0) {

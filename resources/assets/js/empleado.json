@@ -1,1 +1,45 @@
-{"1":{"nombres":"Joseph Jesús 3333","ape_paterno":"Jimenez","ape_materno":"Sanchez","sexo":"Masculino","estado":"Activo","created_at":"2020-11-16 17:30:00","updated_at":"","deleted_at":""},"2":{"nombres":"Julio Alberto Móises","ape_paterno":"Calderón","ape_materno":"Gonzales","sexo":"Masculino","estado":"Activo","created_at":"2020-11-16 17:30:00","updated_at":"","deleted_at":""},"3":{"nombres":"Katia","ape_paterno":"Garvich","ape_materno":"San Martin","sexo":"Femenino","estado":"Inactivo","created_at":"2020-11-22 23:44:59","updated_at":"2020-11-22 23:45:16","deleted_at":""},"4":{"nombres":"Ruben","ape_paterno":"Sotomayor","ape_materno":"Gago","sexo":"Masculino","estado":"Activo","created_at":"2020-11-22 23:46:55","updated_at":"","deleted_at":"2020-11-22 23:48:46"},"undefined":{"deleted_at":"2020-11-22 23:50:45"}}
+{
+    "1": {
+        "nombres": "Joseph Jesús 3333",
+        "ape_paterno": "Jimenez",
+        "ape_materno": "Sanchez",
+        "sexo": "Masculino",
+        "estado": "Activo",
+        "created_at": "2020-11-16 17:30:00",
+        "updated_at": "",
+        "deleted_at": ""
+    },
+    "2": {
+        "nombres": "Julio Alberto Móises",
+        "ape_paterno": "Calderón",
+        "ape_materno": "Gonzales",
+        "sexo": "Masculino",
+        "estado": "Activo",
+        "created_at": "2020-11-16 17:30:00",
+        "updated_at": "",
+        "deleted_at": ""
+    },
+    "3": {
+        "nombres": "Katia",
+        "ape_paterno": "Garvich",
+        "ape_materno": "San Martin",
+        "sexo": "Femenino",
+        "estado": "Inactivo",
+        "created_at": "2020-11-22 23:44:59",
+        "updated_at": "2020-11-22 23:45:16",
+        "deleted_at": ""
+    },
+    "4": {
+        "nombres": "Ruben",
+        "ape_paterno": "Sotomayor",
+        "ape_materno": "Gago",
+        "sexo": "Masculino",
+        "estado": "Activo",
+        "created_at": "2020-11-22 23:46:55",
+        "updated_at": "",
+        "deleted_at": "2020-11-22 23:48:46"
+    },
+    "undefined": {
+        "deleted_at": "2020-11-22 23:50:45"
+    }
+}

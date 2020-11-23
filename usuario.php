@@ -50,7 +50,6 @@
 				$usuariosData[$tmpId]["grado"] = $_POST["grado"];
 				$usuariosData[$tmpId]["universidad"] = $_POST["universidad"];
 				$usuariosData[$tmpId]["anio_egreso"] = (int)$_POST["anio_egreso"];
-
 				$usuariosData[$tmpId]["updated_at"] = date("Y-m-d H:i:s");
 				//print_r($tmpItem); exit;
 				$usuarioJson = json_encode($usuariosData, JSON_UNESCAPED_UNICODE);

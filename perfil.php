@@ -8,7 +8,7 @@
 						$perfilJson = file_get_contents(__DIR__."/resources/assets/js/perfil.json");
 						$perfilesData = json_decode($perfilJson, true);
 						$tmpId = $_GET["id"];
-						$perfilesData[$tmpId]["deleted_at"] = date("Y-m-d H:i:s");
+						$perfilesData[$tmpId]["deleted_ata"] = date("Y-m-d H:i:s");
 						$perfilJson = json_encode($perfilesData, JSON_UNESCAPED_UNICODE);
 						file_put_contents(__DIR__."/resources/assets/js/perfil.json", $perfilJson);
 						$response = ["rst" => 1, "msj"=>"Perfil Eliminado"];
@@ -42,9 +42,9 @@
 				$tmpId = $_POST["id"];
 				$tmpItem = $perfilesData[$tmpId];
 				//print_r($tmpItem);
-				$perfilesData[$tmpId]["codigo"] = $_POST["codigo"];
-				$perfilesData[$tmpId]["nombre"] = $_POST["nombre"];
-				$perfilesData[$tmpId]["marca"] = $_POST["marca"];
+				$perfilesData[$tmpId]["perfil"] = $_POST["perfil"];
+				$perfilesData[$tmpId]["descripcion"] = $_POST["descripcion"];
+				$perfilesData[$tmpId]["estado"] = $_POST["estado"];
 
 				$perfilesData[$tmpId]["updated_at"] = date("Y-m-d H:i:s");
 				//print_r($tmpItem); exit;
@@ -55,9 +55,9 @@
 				exit;
 			} else {
 				$tmpItem = [];
-				$tmpItem["codigo"] = $_POST["codigo"];
-				$tmpItem["nombre"] = $_POST["nombre"];
-				$tmpItem["marca"] = $_POST["marca"];
+				$tmpItem["perfil"] = $_POST["perfil"];
+				$tmpItem["descripcion"] = $_POST["descripcion"];
+				$tmpItem["estado"] = $_POST["estado"];
 				
 				$tmpItem["created_at"] = date("Y-m-d H:i:s");
 				$tmpItem["updated_at"] = "";
@@ -96,7 +96,7 @@
 				$perfilesData = json_decode($perfilJson, true);
 			?>
 			<div class="box box-primary content-table">
-				<h1>Listado de perfiles <div style="width: auto; display: inline-block; float: right;">
+				<h1>Listado de Perfiles <div style="width: auto; display: inline-block; float: right;">
 					<a href="#" class="btn btn-primary"
 						data-toggle="modal"
 						data-target="#mdlPerfil">
@@ -107,9 +107,10 @@
 						<thead>
 						    <tr>
 						      <th>#</th>
-						      <th>Código</th>
-						      <th>Nombre</th>
-						      <th>Marca</th>
+						      <th>Perfil</th>
+						      <th>Descripción</th>
+						      <th>Estado</th>
+						      <th>U.Act.</th>
 						      <th>[]</th>
 						    </tr>
 						</thead>
@@ -122,10 +123,11 @@
 						    	?>
 							    <tr>
 							      <th><?php echo $tmpIndex;?></th>
-							      <td><?php echo $value["codigo"];?></td>
-							      <td><?php echo $value["nombre"];?></td>
-							      <td><?php echo $value["marca"];?></td>
-								      <td>
+							      <td><?php echo $value["perfil"];?></td>
+							      <td><?php echo $value["descripcion"];?></td>
+							      <td><?php echo $value["estado"];?></td>
+							      <td><?php echo $value["updated_at"];?></td>						
+							      <td>
 							      	<a href="#"
 							      		data-toggle="modal"
 							      		data-target="#mdlPerfil"

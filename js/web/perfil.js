@@ -9,9 +9,9 @@ $('#mdlPerfil').on('show.bs.modal', function (event) {
 			success : function(obj) {
 				var objData = JSON.parse(obj);
 				$("#txt_id").val(objData.id);
-				$("#txt_codigo").val(objData.codigo);
-				$("#txt_nombre").val(objData.nombre);
-				$("#txt_marca").val(objData.marca);
+				$("#txt_perfil").val(objData.perfil);
+				$("#txt_descripcion").val(objData.descripcion);
+				$("#slct_estado").val(objData.estado);
 				removeLoading();
 			}
 		});

@@ -104,7 +104,7 @@
 				$productosData = json_decode($productoJson, true);
 			?>
 			<div class="box box-primary content-table">
-				<h1>Listado de productos <div style="width: auto; display: inline-block; float: right;">
+				<h1>Listado de Productos <div style="width: auto; display: inline-block; float: right;">
 					<a href="#" class="btn btn-primary"
 						data-toggle="modal"
 						data-target="#mdlProducto">
@@ -122,6 +122,7 @@
 						      <th>Precio</th>
 						      <th>Stock</th>
 						      <th>Categoria</th>
+						      <th>U.Act.</th>
 						      <th>[]</th>
 						    </tr>
 						</thead>
@@ -141,6 +142,7 @@
 							      <td><?php echo $value["precio"];?></td>
 							      <td><?php echo $value["stock"];?></td>
 							      <td><?php echo $value["categoria"];?></td>
+							      <td><?php echo $value["updated_at"];?></td>
 							      <td>
 							      	<a href="#"
 							      		data-toggle="modal"

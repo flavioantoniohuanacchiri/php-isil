@@ -82,7 +82,7 @@
 		<?php
 			include __DIR__."/resources/views/includes/head.phtml";
 		?>
-		<title>categorias</title>
+		<title>Categorias</title>
 	</head>
 	<body>
 		<?php
@@ -94,7 +94,7 @@
 				$categoriasData = json_decode($categoriaJson, true);
 			?>
 			<div class="box box-primary content-table">
-				<h1>Listado de categorias <div style="width: auto; display: inline-block; float: right;">
+				<h1>Listado de Categorias <div style="width: auto; display: inline-block; float: right;">
 					<a href="#" class="btn btn-primary"
 						data-toggle="modal"
 						data-target="#mdlCategoria">
@@ -107,6 +107,7 @@
 						      <th>#</th>
 						      <th>Tipo</th>
 						      <th>Estado</th>
+						      <th>U.Act.</th>
 						      <th>[]</th>
 						    </tr>
 						</thead>
@@ -121,6 +122,7 @@
 							      <th><?php echo $tmpIndex;?></th>
 							      <td><?php echo $value["tipo"];?></td>
 							      <td><?php echo $value["estado"];?></td>
+							      <td><?php echo $value["updated_at"];?></td>
 							      <td>
 							      	<a href="#"
 							      		data-toggle="modal"

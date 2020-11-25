@@ -127,9 +127,9 @@
 						    <tr>
 						      <th>#</th>
 						      <th>Nombres</th>
-						      <th>Ape Paterno</th>
-						      <th>Ape Materno</th>
-						      <th>Sexo</th>
+						      <th>Apellidos</th>
+						      <th>Área</th>
+						      <th>Puesto</th>
 						      <th>U.Act.</th>
 						      <th>[]</th>
 						    </tr>
@@ -139,15 +139,15 @@
 						  			//print_r($empleadosData); exit;
 						    		foreach ($empleadosData as $key => $value) {
 						    			$tmpIndex = (int)$key;
-						    			$tmpIndex = $tmpIndex - 1;
 						    			if ($value["deleted_at"] == "") {
 						    	?>
 							    <tr>
 							      <th><?php echo $tmpIndex;?></th>
 							      <td><?php echo $value["nombres"];?></td>
-							      <td><?php echo $value["ape_paterno"];?></td>
-							      <td><?php echo $value["ape_materno"];?></td>
-							      <td><?php echo $value["sexo"];?></td>
+							      <td><?php echo $value["ape_paterno"]." ".$value["ape_materno"];?></td>
+							      <td><?php echo $value["area"];?></td>
+							      <td><?php echo $value["puesto"];?></td>
+
 							      <td><?php echo $value["updated_at"];?></td>
 							      <td>
 							      	<a href="#"

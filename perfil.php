@@ -43,9 +43,10 @@
 				$tmpItem = $productosData[$tmpId];
 				//print_r($tmpItem);
 				$productosData[$tmpId]["codigo"] = $_POST["codigo"];
+				$productosData[$tmpId]["nombre"] = $_POST["nombre"];
 				$productosData[$tmpId]["marca"] = $_POST["marca"];
 				$productosData[$tmpId]["modelo"] = $_POST["modelo"];
-				$productosData[$tmpId]["serie"] = $_POST["serie"];
+				$productosData[$tmpId]["unidad"] = $_POST["unidad"];
 				$productosData[$tmpId]["precio"] = $_POST["precio"];
 				$productosData[$tmpId]["stock"] = $_POST["stock"];
 				$productosData[$tmpId]["categoria"] = $_POST["categoria"];
@@ -60,9 +61,10 @@
 			} else {
 				$tmpItem = [];
 				$tmpItem["codigo"] = $_POST["codigo"];
+				$tmpItem["nombre"] = $_POST["nombre"];
 				$tmpItem["marca"] = $_POST["marca"];
 				$tmpItem["modelo"] = $_POST["modelo"];
-				$tmpItem["serie"] = $_POST["serie"];
+				$tmpItem["unidad"] = $_POST["unidad"];
 				$tmpItem["precio"] = $_POST["precio"];
 				$tmpItem["stock"] = $_POST["stock"];
 				$tmpItem["categoria"] = $_POST["categoria"];
@@ -116,9 +118,10 @@
 						    <tr>
 						      <th>#</th>
 						      <th>Código</th>
+						      <th>Nombre</th>
 						      <th>Marca</th>
 						      <th>Modelo</th>
-						      <th>Serie</th>
+						      <th>Unidad</th>
 						      <th>Precio</th>
 						      <th>Stock</th>
 						      <th>Categoria</th>
@@ -135,9 +138,10 @@
 							    <tr>
 							      <th><?php echo $tmpIndex;?></th>
 							      <td><?php echo $value["codigo"];?></td>
+							      <td><?php echo $value["nombre"];?></td>
 							      <td><?php echo $value["marca"];?></td>
 							      <td><?php echo $value["modelo"];?></td>
-							      <td><?php echo $value["serie"];?></td>
+							      <td><?php echo $value["unidad"];?></td>
 							      <td><?php echo $value["precio"];?></td>
 							      <td><?php echo $value["stock"];?></td>
 							      <td><?php echo $value["categoria"];?></td>

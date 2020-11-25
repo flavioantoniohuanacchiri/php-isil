@@ -20,9 +20,7 @@
 						# code...
 						break;
 				}
-			} elseif (isset($_GET["id"])) {
-							print_r($_GET); exit;
-
+			}if (isset($_GET["id"])) {
 				$usuarioJson = file_get_contents(__DIR__."/resources/assets/js/usuario.json");
 				$usuariosData = json_decode($usuarioJson, true);
 				$tmpId = $_GET["id"];

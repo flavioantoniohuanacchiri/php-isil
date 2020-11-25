@@ -10,7 +10,6 @@
 						$tmpId = $_GET["id"];
 						$usuariosData[$tmpId]["deleted_at"] = date("Y-m-d H:i:s");
 						$usuarioJson = json_encode($usuariosData, JSON_UNESCAPED_UNICODE);
-						echo $usuarioJson; exit;
 						file_put_contents(__DIR__."/resources/assets/js/usuario.json", $usuarioJson);
 						$response = ["rst" => 1, "msj"=>"Usuario Eliminado"];
 						echo json_encode($response);
@@ -22,6 +21,8 @@
 						break;
 				}
 			} elseif (isset($_GET["id"])) {
+							print_r($_GET); exit;
+
 				$usuarioJson = file_get_contents(__DIR__."/resources/assets/js/usuario.json");
 				$usuariosData = json_decode($usuarioJson, true);
 				$tmpId = $_GET["id"];
@@ -128,7 +129,6 @@
 						</thead>
 						<tbody>
 						  		<?php 
-						  			//print_r($usuariosData); exit;
 						    		foreach ($usuariosData as $key => $value) {
 						    			$tmpIndex = (int)$key;
 						    			if ($value["deleted_at"] == "") {

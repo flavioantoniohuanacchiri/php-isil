@@ -52,7 +52,7 @@
 				//$empleadosData[$tmpId]["grado"] = $_POST["grado"];
 				//$empleadosData[$tmpId]["universidad"] = $_POST["universidad"];
 				//$empleadosData[$tmpId]["anio_egreso"] = (int)$_POST["anio_egreso"];
-				$emplaedosData[$tmpId]["updated_at"] = date("Y-m-d H:i:s");
+				$empleadosData[$tmpId]["updated_at"] = date("Y-m-d H:i:s");
 				//print_r($tmpItem); exit;
 				$empleadosJson = json_encode($empleadosData, JSON_UNESCAPED_UNICODE);
 				file_put_contents(__DIR__."/resources/assets/js/ajax_data_empleado.json", $empleadosJson);

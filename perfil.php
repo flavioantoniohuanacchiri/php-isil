@@ -45,7 +45,7 @@
 				$perfilesData[$tmpId]["nombre"] = $_POST["nombre"];
 				$perfilesData[$tmpId]["descripcion"] = $_POST["descripcion"];
 				$perfilesData[$tmpId]["area"] = $_POST["area"];
-				$c[$tmpId]["updated_at"] = date("Y-m-d H:i:s");
+				$perfilesData[$tmpId]["updated_at"] = date("Y-m-d H:i:s");
 				//print_r($tmpItem); exit;
 				$perfilJson = json_encode($perfilesData, JSON_UNESCAPED_UNICODE);
 				file_put_contents(__DIR__."/resources/assets/js/perfil.json", $perfilJson);

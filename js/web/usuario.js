@@ -17,6 +17,7 @@ $('#mdlUsuario').on('show.bs.modal', function (event) {
 				$("#txt_grado").val(objData.grado);
 				$("#txt_universidad").val(objData.universidad);
 				$("#slct_anio_egreso").val(objData.anio_egreso);
+				$("#slct_perfil").val(objData.perfil);
 				removeLoading();
 			}
 		});
@@ -60,7 +61,8 @@ $("#form-usuario").submit(function() {
 	})
 	return false;
 });
-$(document).delegate(".btn-delete", "click", function(e) {
+
+$(".btn-delete").click(function(e) {
 	var id = $(e.target).data("id");
 	Swal.fire({
 	  title: '¿Quiere eliminar este Registro?',

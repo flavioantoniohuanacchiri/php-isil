@@ -14,7 +14,8 @@
 			include __DIR__."/resources/views/includes/header.phtml";
 		?>
 		<div class="container">
-			<h1>Página de Inicio.</h1>
+			<h1>Bienvenido <?php echo $_SESSION["user"]["nombre"];?></h1>
+			<p>Aquí podrás realizar mantenimientos a Productos, Categorías, Usuarios, Perfiles y Empleados</p>
 		</div>
 		<?php
 			include __DIR__."/resources/views/includes/script.phtml";

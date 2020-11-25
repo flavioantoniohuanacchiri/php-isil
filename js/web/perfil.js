@@ -1,39 +1,41 @@
-$('#mdlEmpleado').on('show.bs.modal', function (event) {
+$('#mdlPerfil').on('show.bs.modal', function (event) {
 	var id = $(event.relatedTarget).data("id");
 	if (typeof id !=undefined && typeof id !="undefined") {
 		showLoading();
-		var empleado = $.ajax({
+		var perfil = $.ajax({
 			type : "GET",
-			url : "empleado.php",
+			url : "perfil.php",
 			data : {id: id},
 			success : function(obj) {
 				var objData = JSON.parse(obj);
 				$("#txt_id").val(objData.id);
+				$("#txt_dni").val(objData.dni);
 				$("#txt_nombres").val(objData.nombres);
-				$("#txt_ape_paterno").val(objData.ape_paterno);
-				$("#txt_ape_materno").val(objData.ape_materno);
+				$("#txt_apellidos").val(objData.apellidos);
+				//$("#txt_ape_materno").val(objData.ape_materno);
 				$("#slct_sexo").val(objData.sexo);
-				$("#txt_posicion").val(objData.posicion);
-				$("#txt_area").val(objData.area);
-				$("#txt_start_date").val(objData.start_date);
+				$("#txt_fecha_Nac").val(objData.fecha_Nac);
+				$("#txt_direccion").val(objData.direccion);
+				$("#txt_numero_telefono").val(objData.numero_telefono);
+				//$("#txt_carrera").val(objData.carrera);
 				removeLoading();
 			}
 		});
 	}
 
 });
-$('#mdlEmpleado').on('show.bs.modal', function (event) {
+$('#mdlPerfil').on('show.bs.modal', function (event) {
 	$("input[type=text], select, #txt_id").val("");
 });
 $("#btn-guardar").click(function() {
-	$("#form-empleado").submit();
+	$("#form-perfil").submit();
 });
-$("#form-empleado").submit(function() {
+$("#form-perfil").submit(function() {
 	showLoading();
 	$.ajax({
 		type : "POST",
-		url : "empleado.php",
-		data : $("#form-empleado").serialize(),
+		url : "perfil.php",
+		data : $("#form-perfil").serialize(),
 		success : function(obj) {
 			var objData = JSON.parse(obj);
 			if (parseInt(objData.rst) == 1) {
@@ -45,7 +47,7 @@ $("#form-empleado").submit(function() {
 				removeLoading();
 				setTimeout(function() {
 					showLoading();
-					window.location.href="empleado.php";
+					window.location.href="perfil.php";
 				}, 2000);
 			} else {
 				Swal.fire({
@@ -72,7 +74,7 @@ $(".btn-delete").click(function(e) {
 		  if (result.isConfirmed) {
 		    	$.ajax({
 		    		type : "GET",
-		    		url : "empleado.php?action=delete&id="+id,
+		    		url : "perfil.php?action=delete&id="+id,
 		    		success : function(obj) {
 		    			var objData = JSON.parse(obj);
 		    			Swal.fire(
@@ -81,6 +83,7 @@ $(".btn-delete").click(function(e) {
 							'success'
 						);
 		    			removeLoading();
+		    			window.location.href="perfil.php";
 		    		}
 		    	})
 		  }

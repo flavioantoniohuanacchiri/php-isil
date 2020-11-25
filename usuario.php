@@ -7,7 +7,7 @@
 					case 'delete':
 						$usuarioJson = file_get_contents(__DIR__."/resources/assets/js/usuario.json");
 						$usuariosData = json_decode($usuarioJson, true);
-						$tmpId = $_GET["id"];
+						$tmpId = (int)$_GET["id"];
 						$usuariosData[$tmpId]["deleted_at"] = date("Y-m-d H:i:s");
 						$usuarioJson = json_encode($usuariosData, JSON_UNESCAPED_UNICODE);
 						file_put_contents(__DIR__."/resources/assets/js/usuario.json", $usuarioJson);

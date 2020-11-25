@@ -86,6 +86,9 @@ $(document).delegate(".btn-delete", "click", function(e) {
 							'success'
 						);
 			    		removeLoading();
+			    		setTimeout(function() {
+			    			location.reload();
+			    		}, 1000);
 			    	}
 			    });
 			}

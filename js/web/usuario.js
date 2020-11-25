@@ -60,6 +60,7 @@ $("#form-usuario").submit(function() {
 	})
 	return false;
 });
+
 $(".btn-delete").click(function(e) {
 	var id = $(e.target).data("id");
 	Swal.fire({
@@ -87,3 +88,39 @@ $(".btn-delete").click(function(e) {
 		  }
 	});
 })
+/*
+$(document).delegate(".btn-delete", "click", function(e) {
+	var id = e.target.dataset.id;
+	Swal.queue([{
+		title: '¿Estás seguro de eliminarlo?',
+		text: "Este cambio no es reversible!",
+	  	type: 'warning',
+		showCancelButton: true,
+		confirmButtonText: 'Si deseo, eliminarlo!',
+		confirmButtonColor: '#3085d6',
+		cancelButtonColor: '#d33',
+		showLoaderOnConfirm: true
+	}]).then(function(result) {
+		if (typeof result.value!="undefined" && typeof result.value!=undefined) {
+			if (result.value[0]) {
+				showLoading();
+				$.ajax({
+			    	type : "GET",
+			    	url : "usuario.php?action=delete&id="+id,
+			    	success : function(obj) {
+			    		var objData = JSON.parse(obj);
+			    		Swal.fire(
+							'Muy Bien!',
+							objData.msj,
+							'success'
+						);
+			    		removeLoading();
+			    		setTimeout(function() {
+			    			location.reload();
+			    		}, 1000);
+			    	}
+			    });
+			}
+		}
+	});
+});*/

@@ -20,7 +20,8 @@
 						# code...
 						break;
 				}
-			}
+			} 
+
 			if (isset($_GET["id"])) {
 				$usuarioJson = file_get_contents(__DIR__."/resources/assets/js/usuario.json");
 				$usuariosData = json_decode($usuarioJson, true);
@@ -32,6 +33,7 @@
 				}
 
 			}
+
 		}
 	}
 	if (isset($_POST)) {

@@ -61,53 +61,68 @@ $("#form-usuario").submit(function() {
 	return false;
 });
 $(document).delegate(".btn-delete", "click", function(e) {
-	var id = e.target.dataset.id;
-	Swal.queue([{
-		title: '¿Estás seguro de eliminarlo?',
-		text: "Este cambio no es reversible!",
-	  	type: 'warning',
-		showCancelButton: true,
-		confirmButtonText: 'Si deseo, eliminarlo!',
-		confirmButtonColor: '#3085d6',
-		cancelButtonColor: '#d33',
-		showLoaderOnConfirm: true
-	}]).then(function(result) {
-		if (typeof result.value!="undefined" && typeof result.value!=undefined) {
-			if (result.value[0]) {
-				showLoading();
-				$.ajax({
-			    	type : "GET",
-			    	url : "usuario.php?action=delete&id="+id,
-			    	success : function(obj) {
-			    		var objData = JSON.parse(obj);
-			    		Swal.fire(
-							'Muy Bien!',
-							objData.msj,
-							'success'
-						);
-			    		removeLoading();
-			    		setTimeout(function() {
-			    			location.reload();
-			    		}, 1000);
-			    	}
-			    });
-			}
-		}
-	});
-	/*Swal.fire({
+	var id = $(e.target).data("id");
+	Swal.fire({
 	  title: '¿Quiere eliminar este Registro?',
 	  showCancelButton: true,
 	  confirmButtonText: `Eliminar`,
 	  cancelButtonText: `Cancelar`,
-	},
-	function(isConfirm){
-	    alert(isConfirm);
-	    alert(id);
-	    swal("Deleted!", "Your imaginary file has been deleted.", "success");
-	});.then((result) => {
+	}).then((result) => {
 		showLoading();
+		  /* Read more about isConfirmed, isDenied below */
 		  if (result.isConfirmed) {
-
+		    	$.ajax({
+		    		type : "GET",
+		    		url : "usuario.php?action=delete&id="+id,
+		    		success : function(obj) {
+		    			var objData = JSON.parse(obj);
+		    			Swal.fire(
+							'Muy Bien!',
+							objData.msj,
+							'success'
+						);
+		    			removeLoading();
+		    		}
+		    	})
 		  }
-	});*/
+	});
 });
+
+var Usuario = {
+	list : function(obj) {
+		showLoading();
+		$.ajax({
+			type : "GET",
+			url : "usuario_ajax.php?action=list",
+			success : function(obj) {
+				console.log(obj);
+				var objData = JSON.parse(obj);
+				table.clear().draw();
+	            for(var i in objData) {
+	            	let index = parseInt(i);
+	            	let fila = [];
+	            	index++;
+	                fila.push(index);
+	                fila.push(objData[i].nombres);
+	                fila.push(objData[i].ape_paterno);
+	                fila.push(objData[i].ape_materno);
+	                fila.push(objData[i].sexo);
+	                fila.push(objData[i].updated_at);
+	                var btn = "";
+	                btn+= "<a href='#'";
+						btn+="data-toggle='modal' ";
+						btn+="data-target='#mdlUsuario' ";
+						btn+="class='btn btn-primary' ";
+						btn+="data-id='"+objData[i].id+"'>";
+						btn+="<i class='fas fa-pencil-alt'></i>";
+						btn+="</a>";
+	                fila.push(btn);
+	                console.log(fila);
+	                table.row.add(fila).draw();
+	            }
+	            removeLoading();
+			}
+		});
+	}
+};
+Usuario.list();

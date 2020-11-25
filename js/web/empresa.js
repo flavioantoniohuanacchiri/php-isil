@@ -2,7 +2,11 @@ $('#mdlEmpresa').on('show.bs.modal', function (event) {
 	var id = $(event.relatedTarget).data("id");
 	if (typeof id !=undefined && typeof id !="undefined") {
 		showLoading();
+<<<<<<< HEAD
 		var empresa = $.ajax({
+=======
+		var usuario = $.ajax({
+>>>>>>> dbfea44a02e1c2eb88f2d4497fcc00379ab4f67a
 			type : "GET",
 			url : "empresa.php",
 			data : {id: id},
@@ -12,7 +16,11 @@ $('#mdlEmpresa').on('show.bs.modal', function (event) {
 				$("#txt_razon_social").val(objData.razon_social);
 				$("#txt_ruc").val(objData.ruc);
 				$("#txt_direccion").val(objData.direccion);
+<<<<<<< HEAD
 				$("#slct_status").val(objData.status);
+=======
+				$("#slct_estado").val(objData.estado);
+>>>>>>> dbfea44a02e1c2eb88f2d4497fcc00379ab4f67a
 				removeLoading();
 			}
 		});
@@ -56,7 +64,11 @@ $("#form-empresa").submit(function() {
 	})
 	return false;
 });
+<<<<<<< HEAD
 $(".btn-delete").click(function(e) {
+=======
+$("#btn-delete").click(function(e) {
+>>>>>>> dbfea44a02e1c2eb88f2d4497fcc00379ab4f67a
 	var id = $(e.target).data("id");
 	Swal.fire({
 	  title: '¿Quiere eliminar este Registro?',

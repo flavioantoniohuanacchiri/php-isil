@@ -7,7 +7,7 @@
 					case 'delete':
 						$usuarioJson = file_get_contents(__DIR__."/resources/assets/js/usuario.json");
 						$usuariosData = json_decode($usuarioJson, true);
-						$tmpId = $_GET["id"];
+						$tmpId = (int)$_GET["id"];
 						$usuariosData[$tmpId]["deleted_at"] = date("Y-m-d H:i:s");
 						$usuarioJson = json_encode($usuariosData, JSON_UNESCAPED_UNICODE);
 						file_put_contents(__DIR__."/resources/assets/js/usuario.json", $usuarioJson);
@@ -20,8 +20,9 @@
 						# code...
 						break;
 				}
-			}
-			if (isset($_GET["id"])) {
+			} elseif (isset($_GET["id"])) {
+							print_r($_GET); exit;
+
 				$usuarioJson = file_get_contents(__DIR__."/resources/assets/js/usuario.json");
 				$usuariosData = json_decode($usuarioJson, true);
 				$tmpId = $_GET["id"];
@@ -68,7 +69,7 @@
 				$tmpItem["grado"] = $_POST["grado"];
 				$tmpItem["universidad"] = $_POST["universidad"];
 				$tmpItem["anio_egreso"] = (int)$_POST["anio_egreso"];
-				
+
 				$tmpItem["created_at"] = date("Y-m-d H:i:s");
 				$tmpItem["updated_at"] = "";
 				$tmpItem["deleted_at"] = "";
@@ -128,7 +129,6 @@
 						</thead>
 						<tbody>
 						  		<?php 
-						  			//print_r($usuariosData); exit;
 						    		foreach ($usuariosData as $key => $value) {
 						    			$tmpIndex = (int)$key;
 						    			if ($value["deleted_at"] == "") {

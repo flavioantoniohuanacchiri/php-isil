@@ -84,6 +84,7 @@ $(".btn-delete").click(function(e) {
 							'success'
 						);
 		    			removeLoading();
+		    			window.location = "usuario.php"
 		    		}
 		    	})
 		  }

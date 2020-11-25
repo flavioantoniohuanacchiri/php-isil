@@ -13,8 +13,7 @@ $('#mdlEmpleado').on('show.bs.modal', function (event) {
 				$("#txt_ape_paterno").val(objData.ape_paterno);
 				$("#txt_ape_materno").val(objData.ape_materno);
 				$("#slct_sexo").val(objData.sexo);
-				$("#txt_posicion").val(objData.posicion);
-				$("#txt_area").val(objData.area);
+				$("#txt_numero_fono").val(objData.numero_fono);
 				$("#txt_start_date").val(objData.start_date);
 				removeLoading();
 			}
@@ -59,6 +58,7 @@ $("#form-empleado").submit(function() {
 	})
 	return false;
 });
+
 $(".btn-delete").click(function(e) {
 	var id = $(e.target).data("id");
 	Swal.fire({
@@ -81,6 +81,7 @@ $(".btn-delete").click(function(e) {
 							'success'
 						);
 		    			removeLoading();
+		    			window.location = "empleado.php"
 		    		}
 		    	})
 		  }

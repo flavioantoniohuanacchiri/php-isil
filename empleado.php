@@ -46,14 +46,12 @@
 				$empleadosData[$tmpId]["ape_paterno"] = $_POST["ape_paterno"];
 				$empleadosData[$tmpId]["ape_materno"] = $_POST["ape_materno"];
 				$empleadosData[$tmpId]["sexo"] = $_POST["sexo"];
-				$empleadosData[$tmpId]["posicion"] = $_POST["posicion"];
-				$empleadosData[$tmpId]["area"] = $_POST["area"];
+				$empleadosData[$tmpId]["numero_fono"] = $_POST["numero_fono"];
 				$empleadosData[$tmpId]["start_date"] = $_POST["start_date"];
 				//$empleadosData[$tmpId]["carrera"] = $_POST["carrera"];
 				//$empleadosData[$tmpId]["grado"] = $_POST["grado"];
 				//$empleadosData[$tmpId]["universidad"] = $_POST["universidad"];
 				//$empleadosData[$tmpId]["anio_egreso"] = (int)$_POST["anio_egreso"];
-
 				$emplaedosData[$tmpId]["updated_at"] = date("Y-m-d H:i:s");
 				//print_r($tmpItem); exit;
 				$empleadosJson = json_encode($empleadosData, JSON_UNESCAPED_UNICODE);
@@ -67,14 +65,12 @@
 				$tmpItem["ape_paterno"] = $_POST["ape_paterno"];
 				$tmpItem["ape_materno"] = $_POST["ape_materno"];
 				$tmpItem["sexo"] = $_POST["sexo"];
-				$tmpItem["posicion"] = $_POST["posicion"];
-				$tmpItem["area"] = $_POST["area"];
+				$tmpItem["numero_fono"] = $_POST["numero_fono"];
 				$tmpItem["start_date"] = $_POST["start_date"];
 				//$tmpItem["carrera"] = $_POST["carrera"];
 				//$tmpItem["grado"] = $_POST["grado"];
 				//$tmpItem["universidad"] = $_POST["universidad"];
 				//$tmpItem["anio_egreso"] = (int)$_POST["anio_egreso"];
-				
 				$tmpItem["created_at"] = date("Y-m-d H:i:s");
 				$tmpItem["updated_at"] = "";
 				$tmpItem["deleted_at"] = "";
@@ -128,19 +124,17 @@
 						      <th>Ape Paterno</th>
 						      <th>Ape Materno</th>
 						      <th>Sexo</th>
-							  <th>Posicion</th>
-						      <th>Area</th>
+							  <th>Telefono</th>
 						      <th>Día de Inicio</th>
-						      <th>Fecha de Creación</th>
 						      <th>Fecha de Actualización</th>
-						      <th>Fecha de Eliminación</th>
+						      <th>[]</th>
 						    </tr>
 						</thead>
 						<tbody>
 						  		<?php 
 						  		//	print_r($usuariosData); exit;
 						    		foreach ($empleadosData as $key => $value) {
-						    		$tmpIndex = (int)$key;
+						    		$tmpIndex = $key;
 						    		if ($value["deleted_at"] == "") {
 						    	?>
 							    <tr>
@@ -149,12 +143,9 @@
 							      <td><?php echo $value["ape_paterno"];?></td>
 							      <td><?php echo $value["ape_materno"];?></td>
 							      <td><?php echo $value["sexo"];?></td>
-								  <td><?php echo $value["posicion"];?></td>
-								  <td><?php echo $value["area"];?></td>
+								  <td><?php echo $value["numero_fono"];?></td>
 								  <td><?php echo $value["start_date"];?></td>
-								  <td><?php echo $value["created_at"];?></td>
 								  <td><?php echo $value["updated_at"];?></td>
-							      <td><?php echo $value["deleted_at"];?></td>
 							      <td>
 							      	<a href="#"
 							      		data-toggle="modal"

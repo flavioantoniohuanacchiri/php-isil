@@ -9,15 +9,9 @@ $('#mdlPerfil').on('show.bs.modal', function (event) {
 			success : function(obj) {
 				var objData = JSON.parse(obj);
 				$("#txt_id").val(objData.id);
-				$("#txt_dni").val(objData.dni);
-				$("#txt_nombres").val(objData.nombres);
-				$("#txt_apellidos").val(objData.apellidos);
-				//$("#txt_ape_materno").val(objData.ape_materno);
-				$("#slct_sexo").val(objData.sexo);
-				$("#txt_fecha_Nac").val(objData.fecha_Nac);
-				$("#txt_direccion").val(objData.direccion);
-				$("#txt_numero_telefono").val(objData.numero_telefono);
-				//$("#txt_carrera").val(objData.carrera);
+				$("#txt_nombre").val(objData.nombre);
+				$("#txt_descripcion").val(objData.descripcion);
+				$("#txt_area").val(objData.area);
 				removeLoading();
 			}
 		});
@@ -61,6 +55,7 @@ $("#form-perfil").submit(function() {
 	})
 	return false;
 });
+
 $(".btn-delete").click(function(e) {
 	var id = $(e.target).data("id");
 	Swal.fire({

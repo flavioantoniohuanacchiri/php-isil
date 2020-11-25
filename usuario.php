@@ -1,7 +1,6 @@
 <?php 
 	include __DIR__."/functions/session_helper.php";
 	if (isset($_GET)) {
-
 		if (count($_GET) > 0) {
 			if (isset($_GET["action"])) {
 				switch ($_GET["action"]) {
@@ -123,21 +122,16 @@
 						      <th>Ape Paterno</th>
 						      <th>Ape Materno</th>
 						      <th>Sexo</th>
-						      <th>Carrera</th>
-						      <th>Grado</th>
-						      <th>Universidad</th>
-						      <th>Año de Egreso</th>
 						      <th>Perfil</th>
-						      <th>F.Creación</th>
 						      <th>F.Actualización</th>
-						      <th>F.Borrado</th>
+						      <th>[]</th>
 						    </tr>
 						</thead>
 						<tbody>
 						  		<?php 
 						  			//print_r($usuariosData); exit;
 						    		foreach ($usuariosData as $key => $value) {
-						    			$tmpIndex = (int)$key;
+						    			$tmpIndex = $key;
 						    			if ($value["deleted_at"] == "") {
 						    	?>
 							    <tr>
@@ -146,10 +140,6 @@
 							      <td><?php echo $value["ape_paterno"];?></td>
 							      <td><?php echo $value["ape_materno"];?></td>
 							      <td><?php echo $value["sexo"];?></td>
-							      <td><?php echo $value["carrera"];?></td>
-							      <td><?php echo $value["grado"];?></td>
-							      <td><?php echo $value["universidad"];?></td>
-							      <td><?php echo $value["anio_egreso"];?></td>
 							      <td><?php echo $value["perfil"];?></td>
 							      <td><?php echo $value["updated_at"];?></td>
 							      <td>

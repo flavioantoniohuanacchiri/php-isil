@@ -42,19 +42,9 @@
 				$tmpId = $_POST["id"];
 				$tmpItem = $perfilesData[$tmpId];
 				//print_r($tmpItem);
-				$perfilesData[$tmpId]["dni"] = $_POST["dni"];
-				$perfilesData[$tmpId]["nombres"] = $_POST["nombres"];
-				$perfilesData[$tmpId]["apellidos"] = $_POST["apellidos"];
-				//$perfilesData[$tmpId]["ape_materno"] = $_POST["ape_materno"];
-				$perfilesData[$tmpId]["sexo"] = $_POST["sexo"];
-				$perfilesData[$tmpId]["fecha_Nac"] = $_POST["fecha_Nac"];
-				$perfilesData[$tmpId]["direccion"] = $_POST["direccion"];
-				$perfilesData[$tmpId]["numero_telefono"] = $_POST["numero_telefono"];
-				//$perfilesData[$tmpId]["carrera"] = $_POST["carrera"];
-				//$empleadosData[$tmpId]["grado"] = $_POST["grado"];
-				//$empleadosData[$tmpId]["universidad"] = $_POST["universidad"];
-				//$empleadosData[$tmpId]["anio_egreso"] = (int)$_POST["anio_egreso"];
-
+				$perfilesData[$tmpId]["nombre"] = $_POST["nombre"];
+				$perfilesData[$tmpId]["descripcion"] = $_POST["descripcion"];
+				$perfilesData[$tmpId]["area"] = $_POST["area"];
 				$c[$tmpId]["updated_at"] = date("Y-m-d H:i:s");
 				//print_r($tmpItem); exit;
 				$perfilJson = json_encode($perfilesData, JSON_UNESCAPED_UNICODE);
@@ -64,19 +54,9 @@
 				exit;
 			} else {
 				$tmpItem = [];
-				$tmpItem["dni"] = $_POST["dni"];
-				$tmpItem["nombres"] = $_POST["nombres"];
-				$tmpItem["apellidos"] = $_POST["apellidos"];
-				//$tmpItem["ape_materno"] = $_POST["ape_materno"];
-				$tmpItem["sexo"] = $_POST["sexo"];
-				$tmpItem["fecha_Nac"] = $_POST["fecha_Nac"];
-				$tmpItem["direccion"] = $_POST["direccion"];
-				$tmpItem["numero_telefono"] = $_POST["numero_telefono"];
-				//$tmpItem["carrera"] = $_POST["carrera"];
-				//$tmpItem["grado"] = $_POST["grado"];
-				//$tmpItem["universidad"] = $_POST["universidad"];
-				//$tmpItem["anio_egreso"] = (int)$_POST["anio_egreso"];
-				
+				$tmpItem["nombre"] = $_POST["nombre"];
+				$tmpItem["descripcion"] = $_POST["descripcion"];
+				$tmpItem["area"] = $_POST["area"];
 				$tmpItem["created_at"] = date("Y-m-d H:i:s");
 				$tmpItem["updated_at"] = "";
 				$tmpItem["deleted_at"] = "";
@@ -126,37 +106,28 @@
 						<thead>
 						    <tr>
 						      <th>#</th>
-						      <th>DNI</th>
-						      <th>Nombres</th>
-						      <th>Apellidos</th>
-						      <th>Sexo</th>
-							  <th>Fecha Nac.</th>
-						      <th>Direccion</th>
-						      <th>N° Telefono</th>
-						      <th>Fecha de Creación</th>
+						      <th>Nombre</th>
+						      <th>Descripcion</th>
+						      <th>Area</th>
+							  <th>Fecha de Creación</th>
 						      <th>Fecha de Actualización</th>
-						      <th>Fecha de Eliminación</th>
+						      <th>[]</th>
 						    </tr>
 						</thead>
 						<tbody>
 						  		<?php 
 						  		//	print_r($usuariosData); exit;
 						    		foreach ($perfilesData as $key => $value) {
-						    		$tmpIndex = (int)$key;
+						    		$tmpIndex = $key;
 						    		if ($value["deleted_at"] == "") {
 						    	?>
 							    <tr>
 							      <th><?php echo $tmpIndex;?></th>
-							      <td><?php echo $value["dni"];?></td>
-							      <td><?php echo $value["nombres"];?></td>
-							      <td><?php echo $value["apellidos"];?></td>
-							      <td><?php echo $value["sexo"];?></td>
-								  <td><?php echo $value["fecha_Nac"];?></td>
-								  <td><?php echo $value["direccion"];?></td>
-								  <td><?php echo $value["numero_telefono"];?></td>
+							      <td><?php echo $value["nombre"];?></td>
+							      <td><?php echo $value["descripcion"];?></td>
+							      <td><?php echo $value["area"];?></td>
 								  <td><?php echo $value["created_at"];?></td>
 								  <td><?php echo $value["updated_at"];?></td>
-							      <td><?php echo $value["deleted_at"];?></td>
 							      <td>
 							      	<a href="#"
 							      		data-toggle="modal"

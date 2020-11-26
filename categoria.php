@@ -7,7 +7,7 @@
 					case 'delete':
 						$categoriaJson = file_get_contents(__DIR__."/resources/assets/js/categoria.json");
 						$categoriaData = json_decode($categoriaJson, true);
-						$tmpId = $_GET["id"];
+						$tmpId = (int)$_GET["id"];
 						$categoriaData[$tmpId]["deleted_at"] = date("Y-m-d H:i:s");
 						$categoriaJson = json_encode($categoriaData, JSON_UNESCAPED_UNICODE);
 						file_put_contents(__DIR__."/resources/assets/js/categoria.json", $categoriaJson);

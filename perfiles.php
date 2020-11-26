@@ -7,7 +7,7 @@
 					case 'delete':
 						$perfilesJson = file_get_contents(__DIR__."/resources/assets/js/perfiles.json");
 						$perfilesData = json_decode($perfilesJson, true);
-						$tmpId = $_GET["id"];
+						$tmpId = (int)$_GET["id"];
 						$perfilesData[$tmpId]["deleted_at"] = date("Y-m-d H:i:s");
 						$perfilesJson = json_encode($perfilesData, JSON_UNESCAPED_UNICODE);
 						file_put_contents(__DIR__."/resources/assets/js/perfiles.json", $perfilesJson);

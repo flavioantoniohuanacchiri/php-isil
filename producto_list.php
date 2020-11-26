@@ -110,7 +110,7 @@
 				<h1>Listado de Productos <div style="width: auto; display: inline-block; float: right;">
 					<a href="#" class="btn btn-primary"
 						data-toggle="modal"
-						data-target="#mdlUsuario">
+						data-target="#mdlProducto">
 						<i class="fas fa-plus"></i> Agregar</a>
 					</div></h1>
 			<div class="table-responsive-md">
@@ -175,6 +175,6 @@
 			    responsive: true
 			});
 		</script>
-		<script type="text/javascript" src="js/web/producto_list.js"></script>
+		<script type="text/javascript" src="js/web/producto_list2.js"></script>
 	</body>
 </html>

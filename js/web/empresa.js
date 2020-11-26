@@ -1,4 +1,4 @@
-$('#mdlUsuario').on('show.bs.modal', function (event) {
+$('#mdlEmpresa').on('show.bs.modal', function (event) {
 	var id = $(event.relatedTarget).data("id");
 	if (typeof id !=undefined && typeof id !="undefined") {
 		showLoading();
@@ -19,18 +19,18 @@ $('#mdlUsuario').on('show.bs.modal', function (event) {
 	}
 
 });
-$('#mdlUsuario').on('show.bs.modal', function (event) {
+$('#mdlEmpresa').on('show.bs.modal', function (event) {
 	$("input[type=text], select, #txt_id").val("");
 });
 $("#btn-guardar").click(function() {
-	$("#form-usuario").submit();
+	$("#form-empresa").submit();
 });
-$("#form-usuario").submit(function() {
+$("#form-empresa").submit(function() {
 	showLoading();
 	$.ajax({
 		type : "POST",
 		url : "empresa.php",
-		data : $("#form-usuario").serialize(),
+		data : $("#form-empresa").serialize(),
 		success : function(obj) {
 			var objData = JSON.parse(obj);
 			if (parseInt(objData.rst) == 1) {
@@ -56,7 +56,7 @@ $("#form-usuario").submit(function() {
 	})
 	return false;
 });
-$(".btn-delete").click(function(e) {
+$("#btn-delete").click(function(e) {
 	var id = $(e.target).data("id");
 	Swal.fire({
 	  title: '¿Quiere eliminar este Registro?',

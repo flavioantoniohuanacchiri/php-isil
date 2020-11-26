@@ -10,6 +10,7 @@
 						$tmpId = $_GET["id"];
 						$usuariosData[$tmpId]["deleted_at"] = date("Y-m-d H:i:s");
 						$usuarioJson = json_encode($usuariosData, JSON_UNESCAPED_UNICODE);
+						echo $usuarioJson; exit;
 						file_put_contents(__DIR__."/resources/assets/js/usuario.json", $usuarioJson);
 						$response = ["rst" => 1, "msj"=>"Usuario Eliminado"];
 						echo json_encode($response);
@@ -20,8 +21,7 @@
 						# code...
 						break;
 				}
-			}
-			if (isset($_GET["id"])) {
+			} elseif (isset($_GET["id"])) {
 				$usuarioJson = file_get_contents(__DIR__."/resources/assets/js/usuario.json");
 				$usuariosData = json_decode($usuarioJson, true);
 				$tmpId = $_GET["id"];
@@ -50,7 +50,7 @@
 				$usuariosData[$tmpId]["grado"] = $_POST["grado"];
 				$usuariosData[$tmpId]["universidad"] = $_POST["universidad"];
 				$usuariosData[$tmpId]["anio_egreso"] = (int)$_POST["anio_egreso"];
-                $usuariosData[$tmpId]["perfil"] = $_POST["perfil"];
+
 				$usuariosData[$tmpId]["updated_at"] = date("Y-m-d H:i:s");
 				//print_r($tmpItem); exit;
 				$usuarioJson = json_encode($usuariosData, JSON_UNESCAPED_UNICODE);
@@ -68,7 +68,7 @@
 				$tmpItem["grado"] = $_POST["grado"];
 				$tmpItem["universidad"] = $_POST["universidad"];
 				$tmpItem["anio_egreso"] = (int)$_POST["anio_egreso"];
-                $tmpItem["perfil"] = $_POST["perfil"];
+
 				$tmpItem["created_at"] = date("Y-m-d H:i:s");
 				$tmpItem["updated_at"] = "";
 				$tmpItem["deleted_at"] = "";
@@ -122,16 +122,15 @@
 						      <th>Ape Paterno</th>
 						      <th>Ape Materno</th>
 						      <th>Sexo</th>
-						      <th>Perfil</th>
-						      <th>F.Actualización</th>
+						      <th>U.Act.</th>
 						      <th>[]</th>
 						    </tr>
 						</thead>
 						<tbody>
-						  		<?php 
+						  	<?php /*
 						  			//print_r($usuariosData); exit;
 						    		foreach ($usuariosData as $key => $value) {
-						    			$tmpIndex = $key;
+						    			$tmpIndex = (int)$key;
 						    			if ($value["deleted_at"] == "") {
 						    	?>
 							    <tr>
@@ -140,7 +139,6 @@
 							      <td><?php echo $value["ape_paterno"];?></td>
 							      <td><?php echo $value["ape_materno"];?></td>
 							      <td><?php echo $value["sexo"];?></td>
-							      <td><?php echo $value["perfil"];?></td>
 							      <td><?php echo $value["updated_at"];?></td>
 							      <td>
 							      	<a href="#"
@@ -156,7 +154,7 @@
 							      </td>
 							    </tr>
 							<?php }
-							} ?>
+							} */?>
 						</tbody>
 				</table>
 			</div>
@@ -177,12 +175,7 @@
 			    },
 			    responsive: true
 			});
-			$(document).ready(function() {
-			    
-			 
-			    //new $.fn.dataTable.FixedHeader( table );
-			} );
 		</script>
-		<script type="text/javascript" src="js/web/usuario.js"></script>
+		<script type="text/javascript" src="js/web/usuario_list.js"></script>
 	</body>
 </html>

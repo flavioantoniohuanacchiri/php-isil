@@ -1,10 +1,10 @@
-$('#mdlUsuario').on('show.bs.modal', function (event) {
+$('#mdlEmpleado').on('show.bs.modal', function (event) {
 	var id = $(event.relatedTarget).data("id");
 	if (typeof id !=undefined && typeof id !="undefined") {
 		showLoading();
-		var usuario = $.ajax({
+		var empleado = $.ajax({
 			type : "GET",
-			url : "usuario.php",
+			url : "empleado.php",
 			data : {id: id},
 			success : function(obj) {
 				var objData = JSON.parse(obj);
@@ -13,29 +13,26 @@ $('#mdlUsuario').on('show.bs.modal', function (event) {
 				$("#txt_ape_paterno").val(objData.ape_paterno);
 				$("#txt_ape_materno").val(objData.ape_materno);
 				$("#slct_sexo").val(objData.sexo);
-				$("#txt_carrera").val(objData.carrera);
-				$("#txt_grado").val(objData.grado);
-				$("#txt_universidad").val(objData.universidad);
-				$("#slct_anio_egreso").val(objData.anio_egreso);
-				$("#slct_perfil").val(objData.perfil);
+				$("#txt_numero_fono").val(objData.numero_fono);
+				$("#txt_start_date").val(objData.start_date);
 				removeLoading();
 			}
 		});
 	}
 
 });
-$('#mdlUsuario').on('show.bs.modal', function (event) {
+$('#mdlEmpleado').on('show.bs.modal', function (event) {
 	$("input[type=text], select, #txt_id").val("");
 });
 $("#btn-guardar").click(function() {
-	$("#form-usuario").submit();
+	$("#form-empleado").submit();
 });
-$("#form-usuario").submit(function() {
+$("#form-empleado").submit(function() {
 	showLoading();
 	$.ajax({
 		type : "POST",
-		url : "usuario.php",
-		data : $("#form-usuario").serialize(),
+		url : "empleado.php",
+		data : $("#form-empleado").serialize(),
 		success : function(obj) {
 			var objData = JSON.parse(obj);
 			if (parseInt(objData.rst) == 1) {
@@ -47,7 +44,7 @@ $("#form-usuario").submit(function() {
 				removeLoading();
 				setTimeout(function() {
 					showLoading();
-					window.location.href="usuario.php";
+					window.location.href="empleado.php";
 				}, 2000);
 			} else {
 				Swal.fire({
@@ -75,7 +72,7 @@ $(".btn-delete").click(function(e) {
 		  if (result.isConfirmed) {
 		    	$.ajax({
 		    		type : "GET",
-		    		url : "usuario.php?action=delete&id="+id,
+		    		url : "empleado.php?action=delete&id="+id,
 		    		success : function(obj) {
 		    			var objData = JSON.parse(obj);
 		    			Swal.fire(
@@ -84,7 +81,7 @@ $(".btn-delete").click(function(e) {
 							'success'
 						);
 		    			removeLoading();
-		    			window.location = "usuario.php"
+		    			window.location = "empleado.php"
 		    		}
 		    	})
 		  }

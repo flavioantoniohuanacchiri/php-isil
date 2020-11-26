@@ -3,6 +3,39 @@
 	if (isset($_POST) && count($_POST) > 0) {
 		$json = file_get_contents(__DIR__."/resources/assets/js/login.json");
 		$jsonLogin = json_decode(file_get_contents(__DIR__."/resources/assets/js/login.json"), true);
+
+
+		$acceso = false;
+
+		foreach ($jsonLogin as $key => $value) {
+			$tmpIndex = $key;
+
+			$user = $jsonLogin[$tmpIndex]["user"];
+			$password = $jsonLogin[$tmpIndex]["password"];
+
+			$userPost = $_POST["user"];
+			$passwordPost = $_POST["password"];
+
+			if ($userPost == $user && $passwordPost == $password) {
+				$_SESSION["user"] = [];
+				$_SESSION["user"]["name"] = $userPost;
+				$_SESSION["user"]["nombre"] = $jsonLogin[$tmpIndex]["nombre"];
+				unset($_POST["user"]);
+				unset($_POST["password"]);
+				$response = ["rst" => 1, "msj" => "Haz accedido Correctamente"];
+				echo json_encode($response); exit;
+
+				$acceso = true;
+				//header("Location: home.php");
+			}
+		}
+
+		if($acceso == false){
+			$response = ["rst" => 2, "msj" => "Tus credenciales son Incorrectas!!!"];
+			echo json_encode($response); exit;
+		}
+
+		/*
 		if (isset($jsonLogin["user"]) && isset($jsonLogin["password"])) {
 			$userPost = $_POST["user"];
 			$passwordPost = $_POST["password"];
@@ -18,7 +51,7 @@
 				$response = ["rst" => 2, "msj" => "Tus credenciales son Incorrectas!!!"];
 				echo json_encode($response); exit;
 			}
-		}
+		}*/
 	}
 	if (session_status()) {
 		if (isset($_SESSION["user"])) {

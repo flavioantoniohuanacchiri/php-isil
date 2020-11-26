@@ -1,4 +1,12 @@
 {
-	"user": "isil-admin",
-	"password": "isil-admin-2020"
+	"1":{
+		"user": "isil-admin",
+		"nombre": "Admin",
+		"password": "isil-admin-2020"
+	},
+	"2":{
+		"user": "isil",
+		"nombre": "Usuario",
+		"password": "usuariooficina"
+	}
 }

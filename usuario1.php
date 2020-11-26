@@ -42,9 +42,14 @@
 				$tmpId = $_POST["id"];
 				$tmpItem = $usuariosData[$tmpId];
 				//print_r($tmpItem);
-				$usuariosData[$tmpId]["nombre"] = $_POST["nombre"];
-				$usuariosData[$tmpId]["estado"] = $_POST["estado"];
-				$usuariosData[$tmpId]["perfil"] = $_POST["perfil"];
+				$usuariosData[$tmpId]["nombres"] = $_POST["nombres"];
+				$usuariosData[$tmpId]["ape_paterno"] = $_POST["ape_paterno"];
+				$usuariosData[$tmpId]["ape_materno"] = $_POST["ape_materno"];
+				$usuariosData[$tmpId]["sexo"] = $_POST["sexo"];
+				$usuariosData[$tmpId]["carrera"] = $_POST["carrera"];
+				$usuariosData[$tmpId]["grado"] = $_POST["grado"];
+				$usuariosData[$tmpId]["universidad"] = $_POST["universidad"];
+				$usuariosData[$tmpId]["anio_egreso"] = (int)$_POST["anio_egreso"];
 
 				$usuariosData[$tmpId]["updated_at"] = date("Y-m-d H:i:s");
 				//print_r($tmpItem); exit;
@@ -55,9 +60,14 @@
 				exit;
 			} else {
 				$tmpItem = [];
-				$tmpItem["nombre"] = $_POST["nombre"];
-				$tmpItem["estado"] = $_POST["estado"];
-				$tmpItem["perfil"] = $_POST["perfil"];
+				$tmpItem["nombres"] = $_POST["nombres"];
+				$tmpItem["ape_paterno"] = $_POST["ape_paterno"];
+				$tmpItem["ape_materno"] = $_POST["ape_materno"];
+				$tmpItem["sexo"] = $_POST["sexo"];
+				$tmpItem["carrera"] = $_POST["carrera"];
+				$tmpItem["grado"] = $_POST["grado"];
+				$tmpItem["universidad"] = $_POST["universidad"];
+				$tmpItem["anio_egreso"] = (int)$_POST["anio_egreso"];
 				
 				$tmpItem["created_at"] = date("Y-m-d H:i:s");
 				$tmpItem["updated_at"] = "";
@@ -84,7 +94,7 @@
 		<?php
 			include __DIR__."/resources/views/includes/head.phtml";
 		?>
-		<title>usuarios</title>
+		<title>Usuarios</title>
 	</head>
 	<body>
 		<?php
@@ -92,6 +102,7 @@
 		?>
 		<div class="container">
 			<?php 
+				//echo file_get_contents(__DIR__."/resources/assets/js/usuario.json"); exit;
 				$usuarioJson = file_get_contents(__DIR__."/resources/assets/js/usuario.json");
 				$usuariosData = json_decode($usuarioJson, true);
 			?>
@@ -107,9 +118,10 @@
 						<thead>
 						    <tr>
 						      <th>#</th>
-						      <th>Nombre</th>
-						      <th>Estado</th>
-						      <th>Perfil</th>
+						      <th>Nombres</th>
+						      <th>Ape Paterno</th>
+						      <th>Ape Materno</th>
+						      <th>Sexo</th>
 						      <th>U.Act.</th>
 						      <th>[]</th>
 						    </tr>
@@ -123,9 +135,10 @@
 						    	?>
 							    <tr>
 							      <th><?php echo $tmpIndex;?></th>
-							      <td><?php echo $value["nombre"];?></td>
-							      <td><?php echo $value["estado"];?></td>
-							      <td><?php echo $value["perfil"];?></td>
+							      <td><?php echo $value["nombres"];?></td>
+							      <td><?php echo $value["ape_paterno"];?></td>
+							      <td><?php echo $value["ape_materno"];?></td>
+							      <td><?php echo $value["sexo"];?></td>
 							      <td><?php echo $value["updated_at"];?></td>
 							      <td>
 							      	<a href="#"

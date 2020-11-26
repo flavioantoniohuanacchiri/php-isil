@@ -7,8 +7,8 @@
 					case 'delete':
 						$perfilJson = file_get_contents(__DIR__."/resources/assets/js/perfil.json");
 						$perfilesData = json_decode($perfilJson, true);
-						$tmpId = $_GET["id"];
-						$perfilesData[$tmpId]["deleted_ata"] = date("Y-m-d H:i:s");
+						$tmpId = (int)$_GET["id"];
+						$perfilesData[$tmpId]["deleted_at"] = date("Y-m-d H:i:s");
 						$perfilJson = json_encode($perfilesData, JSON_UNESCAPED_UNICODE);
 						file_put_contents(__DIR__."/resources/assets/js/perfil.json", $perfilJson);
 						$response = ["rst" => 1, "msj"=>"Perfil Eliminado"];

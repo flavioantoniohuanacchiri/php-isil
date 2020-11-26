@@ -7,7 +7,7 @@
 					case 'delete':
 						$productoJson = file_get_contents(__DIR__."/resources/assets/js/producto.json");
 						$productosData = json_decode($productoJson, true);
-						$tmpId = $_GET["id"];
+						$tmpId = (int)$_GET["id"];
 						$productosData[$tmpId]["deleted_at"] = date("Y-m-d H:i:s");
 						$productoJson = json_encode($productosData, JSON_UNESCAPED_UNICODE);
 						file_put_contents(__DIR__."/resources/assets/js/producto.json", $productoJson);

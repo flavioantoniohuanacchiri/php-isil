@@ -61,34 +61,6 @@ $("#form-usuario").submit(function() {
 	return false;
 });
 
-$(".btn-delete").click(function(e) {
-	var id = $(e.target).data("id");
-	Swal.fire({
-	  title: '¿Quiere eliminar este Registro?',
-	  showCancelButton: true,
-	  confirmButtonText: `Eliminar`,
-	  cancelButtonText: `Cancelar`,
-	}).then((result) => {
-		showLoading();
-		  /* Read more about isConfirmed, isDenied below */
-		  if (result.isConfirmed) {
-		    	$.ajax({
-		    		type : "GET",
-		    		url : "usuario.php?action=delete&id="+id,
-		    		success : function(obj) {
-		    			var objData = JSON.parse(obj);
-		    			Swal.fire(
-							'Muy Bien!',
-							objData.msj,
-							'success'
-						);
-		    			removeLoading();
-		    		}
-		    	})
-		  }
-	});
-})
-/*
 $(document).delegate(".btn-delete", "click", function(e) {
 	var id = e.target.dataset.id;
 	Swal.queue([{
@@ -123,4 +95,4 @@ $(document).delegate(".btn-delete", "click", function(e) {
 			}
 		}
 	});
-});*/
+});

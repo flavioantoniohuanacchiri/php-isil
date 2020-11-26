@@ -12,17 +12,21 @@
         </div>
     </div>
     <div class="col-md-12">
-        <div class="form-group">
+         <div class="form-group">
             <label>Categoria*</label>
-            <select class="form-control" name="categoria" id="slct_categoria" >
-                <option value="">Seleccione</option>
-                <option value="PC">PC</option>
-                <option value="Laptop">Laptop</option>
-                <option value="Monitor">Monitor</option>
-                <option value="Mouse">Mouse</option>
-                <option value="Teclado">Teclado</option>
-                <option value="Teléfono">Teléfono</option>
-                <option value="Impresora">Impresora</option>
+            <?php 
+                $categoriaJson = file_get_contents("./resources/assets/js/categoria.json");
+                $categoriasData = json_decode($categoriaJson, true);
+            ?>
+            <select class="form-control" id="slct_categoria" name="categoria">
+              <option value="">Seleccione</option>
+            <?php 
+                  foreach ($categoriasData as $key => $value) { 
+                    if ($value["deleted_at"] == "") { ?>
+                    <option value= "<?php echo $value['tipo']; ?>" > <?php echo $value['tipo']; ?> </option>
+                   <?php }
+                  }
+            ?>
             </select>
         </div>
     </div>    

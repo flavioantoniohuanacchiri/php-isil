@@ -12,7 +12,18 @@ switch ($action) {
 		echo $objController->list($requestData);
     	exit;
 		break;
-	
+	case "show":
+		echo $objController->show($requestData["id"]);
+    	exit;
+		break;
+	case "save":
+		echo $objController->save($requestData);
+    	exit;
+		break;
+	case "delete":
+		echo $objController->destroy($requestData["id"]);
+    	exit;
+		break;
 	default:
 		# code...
 		break;

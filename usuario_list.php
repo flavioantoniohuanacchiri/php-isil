@@ -47,7 +47,7 @@
 			
 		</div>
 		<?php 
-			include __DIR__."/resources/views/modal/mdl_usuario.phtml";
+			include __DIR__."/resources/views/modal/mdl_usuario2.phtml";
 		?>
 		<?php
 			include __DIR__."/resources/views/includes/script.phtml";

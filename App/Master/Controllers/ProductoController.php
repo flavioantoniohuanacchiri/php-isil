@@ -25,9 +25,9 @@ class ProductoController
 			} else {
 				$obj = Producto::find($id);
 			}
-			$obj->nombres = $request["nombre"];
-			$obj->ape_paterno = $request["descripcion"];
-			$obj->ape_materno = $request["estado"];
+			$obj->nombre = $request["nombre"];
+			$obj->descripcion = $request["descripcion"];
+			$obj->estado = $request["estado"];
 			$obj->save();
 			$msj = "Producto Creado";
 			if ($id !="") {

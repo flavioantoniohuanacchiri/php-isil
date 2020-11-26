@@ -26,12 +26,12 @@
 				$usuariosData[$tmpId]["razon_social"] = $_POST["razon_social"];
 				$usuariosData[$tmpId]["ruc"] = $_POST["ruc"];
 				$usuariosData[$tmpId]["direccion"] = $_POST["direccion"];
-				$usuariosData[$tmpId]["updated_at"] = date("Y-m-d H:i:s");
 				$usuariosData[$tmpId]["estado"] = $_POST["estado"];
+				$usuariosData[$tmpId]["updated_at"] = date("Y-m-d H:i:s");
 				//print_r($tmpItem); exit;
 				$usuarioJson = json_encode($usuariosData, JSON_UNESCAPED_UNICODE);
 				file_put_contents(__DIR__."/resources/assets/js/empresa.json", $usuarioJson);
-				$response = ["rst" => 1, "msj"=>"Usuario Actualizado"];
+				$response = ["rst" => 1, "msj"=>"Empresa Actualizado"];
 				echo json_encode($response);
 				exit;
 			} else {
@@ -49,7 +49,7 @@
 				$usuariosData[$size] = $tmpItem;
 				$usuarioJson = json_encode($usuariosData, JSON_UNESCAPED_UNICODE);
 				file_put_contents(__DIR__."/resources/assets/js/empresa.json", $usuarioJson);
-				$response = ["rst" => 1, "msj"=>"Usuario Creado"];
+				$response = ["rst" => 1, "msj"=>"Empresa Creada"];
 				echo json_encode($response);
 				exit;
 			}
@@ -73,7 +73,7 @@
 		?>
 		<div class="container">
 			<?php 
-				//echo file_get_contents(__DIR__."/resources/assets/js/empresa.json"); exit;
+				//echo file_get_contents(__DIR__."/resources/assets/js/usuario.json"); exit;
 				$usuarioJson = file_get_contents(__DIR__."/resources/assets/js/empresa.json");
 				$usuariosData = json_decode($usuarioJson, true);
 			?>
@@ -81,7 +81,7 @@
 				<h1>Listado de Empresas <div style="width: auto; display: inline-block; float: right;">
 					<a href="#" class="btn btn-primary"
 						data-toggle="modal"
-						data-target="#mdlUsuario">
+						data-target="#mdlEmpresa">
 						<i class="fas fa-plus"></i> Agregar</a>
 					</div></h1>
 			<div class="table-responsive-md">
@@ -91,7 +91,7 @@
 						      <th>#</th>
 						      <th>Razón Social</th>
 						      <th>RUC</th>
-						      <th>Direccion</th>
+						      <th>Dirección</th>
 						      <th>U.Act.</th>
 						      <th>Estado</th>
 						      <th>[]</th>
@@ -114,12 +114,12 @@
 							      <td>
 							      	<a href="#"
 							      		data-toggle="modal"
-							      		data-target="#mdlUsuario"
+							      		data-target="#mdlEmpresa"
 							      		class="btn btn-primary"
 							      		data-id="<?php echo $key;?>">
 							      		<i class="fas fa-pencil-alt"></i>
 							      	</a>
-							      	<a class="btn btn-danger btn-delete" data-id="<?php echo $key;?>">
+							      	<a 	class="btn btn-danger btn-delete" data-id="<?php echo $key;?>">
 							      		<i class="fas fa-trash"></i>
 							      	</a>
 							      </td>
